@@ -1,0 +1,15 @@
+{
+  "name": "zirconia-warranty",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "validate": "node scripts/validate-artifact.mjs",
+    "start": "node scripts/preview.mjs",
+    "test": "node scripts/test.mjs && node scripts/auth-test.mjs && node scripts/pages-test.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

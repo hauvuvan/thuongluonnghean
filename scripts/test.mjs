@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import worker from '../worker/index.js';
+import {makeDB} from './local-db.mjs';
+const env={DB:makeDB(),ADMIN_USER_ID:'owner'};
+async function call(path,method='GET',body,user){const headers={'Origin':'https://test.local','Content-Type':'application/json'};if(user)headers['oai-authenticated-user-id']=user;const r=await worker.fetch(new Request('https://test.local'+path,{method,headers,body:body?JSON.stringify(body):undefined}),env);return {status:r.status,body:await r.json()}}
+assert.equal((await call('/api/cards')).status,401);
+assert.equal((await call('/api/me','GET',null,'owner')).status,200);
+assert.equal((await call('/api/me','GET',null,'stranger')).status,403);
+assert.equal((await call('/api/cards','GET',null,'other')).status,403);
+const card={code:'zir2026000001',customer:'Khách kiểm thử',phone:'090 123 4567',product:'Zirconia',clinic:'Nha khoa kiểm thử',quantity:4,positions:'11,12,21,22',start:'2026-01-01',end:'2036-01-01',status:'active',notes:'Nội bộ'};
+const created=await call('/api/cards','POST',card,'owner');assert.equal(created.status,201);
+assert.equal((await call('/api/cards','POST',card,'owner')).status,409);
+assert.equal((await call('/api/cards','POST',{...card,code:'OTHER01',end:'2025-01-01'},'owner')).status,400);
+assert.equal((await call('/api/cards','POST',{...card,start:'2026-02-30'},'owner')).status,400);
+let lookup=await call('/api/lookup','POST',{query:'zir2026000001'});assert.equal(lookup.body.records.length,1);assert.equal(lookup.body.records[0].phone,'090••••567');assert.equal(lookup.body.records[0].notes,undefined);
+assert.equal((await call('/api/lookup','POST',{query:'0901234567'})).body.records.length,1);
+assert.equal((await call('/api/lookup','POST',{query:'MISSING'})).body.records.length,0);
+assert.equal((await call('/api/cards/'+created.body.id,'PUT',{...card,customer:'Đã chỉnh sửa'},'owner')).status,200);
+assert.equal((await call('/api/lookup','POST',{query:card.code})).body.records[0].customer,'Đã chỉnh sửa');
+assert.equal((await call('/api/cards/missing','PUT',card,'owner')).status,404);
+const denied=await worker.fetch(new Request('https://test.local/api/cards',{method:'POST',headers:{Origin:'https://evil.local','oai-authenticated-user-id':'owner'},body:JSON.stringify(card)}),env);assert.equal(denied.status,403);
+console.log('Passed: authentication, authorization, create, edit, lookup by code/phone, duplicate, date validation, missing records, private fields and cross-origin protection.');
