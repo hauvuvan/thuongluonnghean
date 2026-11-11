@@ -1,0 +1,8 @@
+dist/
+site.tar.gz
+
+data/
+outputs/
+.env*
+.dev.vars*
+*.sqlite*
