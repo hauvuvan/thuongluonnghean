@@ -19,7 +19,7 @@ Cấu hình kết nối đích cho `psql` qua cấu hình kết nối và mật 
 
 ## 2. Cấu hình Vercel
 
-Dùng Framework Preset **Other**, Root Directory là thư mục chứa `vercel.json` và Node.js 24. Các tuyến công khai và API được chuyển tới `api/site.mjs`. Thư mục tĩnh chỉ có logo và ảnh sản phẩm.
+Dùng Framework Preset **Other**, Root Directory là thư mục chứa `vercel.json` và giữ cấu hình Node.js tương thích với `engines.node` trong `package.json`. Các tuyến công khai và API được chuyển tới `api/site.mjs`. Thư mục tĩnh chỉ có logo và ảnh sản phẩm.
 
 | Biến | Giá trị |
 | --- | --- |

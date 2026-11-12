@@ -45,7 +45,7 @@
 
 - Yêu cầu: tối ưu dữ liệu bảo hành trên Supabase và triển khai website trên Vercel.
 - Thay đổi: thêm migration Postgres có index mã, số điện thoại và thời điểm cập nhật, hàm tra cứu giới hạn trường công khai, quyền truy cập theo vai trò và phiên quản trị thu hồi được. Vercel dùng Supabase Auth và PostgREST. Bản xem thử trên máy vẫn dùng SQLite. Đã kiểm tra bản SQLite hiện tại có 0 thẻ, chưa có thẻ cần chuyển.
-- Kiểm thử độc lập: `npm test` (API, xác thực và 39 URL), build Worker, validate và diff đều đạt. PostgreSQL nhúng kiểm tra migration, quyền và index. Dữ liệu giả kiểm tra xuất/nhập, bảo toàn dữ liệu, rollback khi trùng. Mô phỏng Supabase kiểm tra đăng nhập/đăng xuất, tra cứu, ghi thẻ, lỗi và giới hạn kích thước.
+- Kiểm thử độc lập: `npm test` (API, xác thực và 39 URL), build Worker, validate và diff đều đạt. PostgreSQL nhúng kiểm tra migration, quyền và index. Dữ liệu giả kiểm tra xuất/nhập, bảo toàn dữ liệu, rollback khi trùng. Mô phỏng Supabase kiểm tra đăng nhập/đăng xuất, tra cứu, ghi thẻ, lỗi và giới hạn kích thước. Vercel CLI 65.14.0 build cục bộ đạt, sinh một Node.js Function và đúng 13 ảnh công khai.
 - Tài liệu: [Triển khai Supabase và Vercel](deployment/supabase-vercel.md).
-- GitHub: mã nguồn gốc trên `origin/main` trùng bản trước các thay đổi cục bộ nhưng lịch sử commit khác. Chuẩn bị nhánh `codex/supabase-vercel` dựa trên `origin/main`.
+- GitHub: mã nguồn gốc trên `origin/main` trùng bản trước các thay đổi cục bộ nhưng lịch sử commit khác. Đã đẩy nhánh `codex/supabase-vercel` dựa trên `origin/main`, commit tính năng `d8ace5e`.
 - Cloud: Vercel yêu cầu xác nhận quyền truy cập nhóm. Kết nối Supabase chưa liệt kê được project, chưa chạy migration trên cloud. Chưa triển khai production, chưa kiểm thử sau triển khai. VPS không áp dụng.
