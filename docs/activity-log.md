@@ -137,3 +137,8 @@
 - Đổi khối đầu trang sang nền xanh dương nhạt #dbeafe, chữ tiêu đề và mô tả màu đen theo yêu cầu. Xem [các trang công khai](features/public-pages.md).
 - npm test, build, validate và diff đạt. Phát hành qua GitHub main và Vercel. VPS không áp dụng.
 - Sau phát hành, Vercel xác nhận commit 3eadd91. Trang chủ Production trả HTTP 200 với nền #dbeafe và chữ #000. Kiểm thử độc lập tính độ tương phản 17,21:1. Chưa xem runtime log.
+
+## 2026-11-12 11:34 — Asia/Ho_Chi_Minh
+
+- Tăng cỡ chữ menu và nút Tra cứu thẻ lên 17 px trên desktop, 16 px trên điện thoại. Dùng chữ đen và nền xanh dương #4f95e4. Bỏ dải chữ BẢO HÀNH ĐIỆN TỬ FIVE-T phía trên logo ở các trang công khai dùng chung đầu trang. Xem [các trang công khai](features/public-pages.md).
+- npm test, build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
