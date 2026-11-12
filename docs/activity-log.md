@@ -183,3 +183,4 @@
 
 - Ba sản phẩm đánh dấu X (Cao cấp Lava, Cercon HT, Emax) hiển thị Đang bảo trì ở trang chi tiết. Bỏ chữ tên, nhóm và Xem chi tiết dưới các ô sản phẩm, giữ ảnh có alt và liên kết.
 - npm test (API/auth/39 URL), build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
+- Sau triển khai, Vercel xác nhận commit 428629d. Trang Emax Production trả Đang bảo trì. QA độc lập xác minh ba trang bảo trì, danh mục 12+4 và ô sản phẩm chỉ ảnh, Lava thường vẫn có bài. Chưa kiểm tra trực quan điện thoại hoặc runtime log.
