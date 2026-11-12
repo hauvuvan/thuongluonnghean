@@ -55,3 +55,8 @@
 - Môi trường: [Vercel Preview](https://thuongluonnghean-jormyt2yn-hauvuhdvn-8559s-projects.vercel.app), project `thuongluonnghean`, deployment `dpl_ADAnG3Zzgcw7HzThDjLvcPgF9Zoa`, commit `9ec9a36`. Vercel xác nhận READY. Bản Preview giữ quyền bảo vệ của project.
 - Kiểm thử viên: agent `qa_cloud` và Codex. Trang chủ, cửa hàng đang bảo trì, chi tiết Katana, trang tra cứu và trang quản trị đều HTTP 200. Logo PNG và ảnh Katana WebP trả đúng định dạng. Trang chủ đúng tên FIVE-T và đủ 12 đường dẫn ảnh. Đường dẫn migration trả 404. API trạng thái đăng nhập HTTP 503 có thông báo chưa kết nối. Log Vercel không có lỗi mức error/fatal trong cửa sổ 15 phút đã kiểm tra.
 - Chưa xác nhận project Supabase đích, chưa chạy migration hoặc cấu hình biến môi trường. Luồng tra cứu dữ liệu, đăng nhập và ghi thẻ chưa nghiệm thu trên Preview. Production chưa triển khai.
+
+### Cấu hình Supabase trên Vercel — 2026-11-12 Asia/Ho_Chi_Minh
+
+- Đã xác nhận Vercel lưu `SUPABASE_URL` và `SUPABASE_PUBLISHABLE_KEY` cho Preview và Production. Chưa có `SUPABASE_SECRET_KEY` hoặc `SUPABASE_ADMIN_USER_ID`.
+- Kết nối quản trị Supabase không truy cập được project đã cung cấp. Chưa áp dụng migration, chưa triển khai bản mới hoặc nghiệm thu dữ liệu thật.
