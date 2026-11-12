@@ -26,3 +26,10 @@
 - Kiểm thử độc lập: `npm test` (API, xác thực và 39 URL), build, validate, 12 ảnh và liên kết sản phẩm HTTP 200; gói Worker trả đủ ảnh. Bản xem thử cổng 4173 đã khởi động lại. Trình duyệt xác nhận đủ 12 ảnh, bốn cột ở 1033 px, hai cột ở 375 px và không tràn ngang.
 - GitHub: nhánh main từ xa có commit khác với HEAD cục bộ. Yêu cầu lấy lịch sử nhánh từ xa bị từ chối nên chưa đối chiếu lịch sử hoặc push.
 - Sites báo không tìm thấy dự án đã cấu hình. Chưa có đích VPS và chưa triển khai production.
+
+## 2026-11-12 09:28 — Asia/Ho_Chi_Minh
+
+- Yêu cầu: giữ mục Sản phẩm và báo đang bảo trì; cập nhật nhận diện theo logo FIVE-T Dental Lab được cung cấp.
+- Thay đổi: dùng logo và tên công ty trên các trang công khai, tra cứu và quản trị. Hai trang cửa hàng hiển thị bảo trì; giữ dữ liệu và các trang nhóm, chi tiết. Xem [Các trang công khai](features/public-pages.md) để mở lại cửa hàng.
+- Kiểm thử độc lập: `npm test` (API, xác thực và 39 URL), build, validate, kiểm tra logo và trạng thái bảo trì trên máy chủ cục bộ và Worker build đều đạt. Sau khi khởi động lại bản xem thử, trình duyệt xác nhận trang Sản phẩm hiện logo, tên và thông báo ở khung mặc định và 375 px, không tràn ngang.
+- GitHub: chưa push vì lịch sử nhánh từ xa chưa được đối chiếu sau khi thao tác fetch bị từ chối ở đợt trước. Sites vẫn báo không tìm thấy dự án đã cấu hình; chưa có đích VPS.

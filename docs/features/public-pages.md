@@ -25,6 +25,10 @@ Bản dựng giữ các đường dẫn chính và tổ chức thông tin; giao 
 
 ## Hành vi
 
+FIVE-T Dental Lab là thương hiệu hiển thị trên đầu trang, chân trang và tiêu đề trình duyệt. Logo gốc nằm ở `worker/brand/five-t.png`.
+
+Mục Sản phẩm vẫn có trong menu. Khi `shopUnderMaintenance` trong `worker/pages.js` là `true`, `/shop/` và `/shop/page/2/` hiển thị “Đang bảo trì” cùng liên kết tra cứu và về trang chủ. Đặt lại thành `false` và build để mở lại lưới cửa hàng. Trang nhóm và chi tiết sản phẩm vẫn hoạt động.
+
 Menu điều hướng dùng liên kết thật, có thể mở trực tiếp từng trang. Danh mục có tìm kiếm/lọc; chi tiết sản phẩm có thông tin riêng, liên kết nhóm và sản phẩm liên quan. Danh mục thương hiệu chưa có sản phẩm hiển thị trạng thái rỗng rõ ràng.
 
 Trang chủ hiển thị 8 ảnh Răng sứ cao cấp và 4 ảnh Răng sứ kim loại, mỗi ảnh mở trang chi tiết tương ứng. Lưới có bốn cột trên máy tính, hai cột ở chiều rộng tối đa 650 px. Cụm Dòng toàn sứ và Đối tác không xuất hiện trong nội dung chính của trang chủ. Danh mục Dòng toàn sứ vẫn truy cập được qua cửa hàng và chân trang.
