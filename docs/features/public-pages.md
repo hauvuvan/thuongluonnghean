@@ -46,3 +46,7 @@ Danh mục được quản lý trong mã nguồn, chưa có CMS để biên tậ
 Kiểm tra đường dẫn, liên kết nội bộ, lỗi 404, cú pháp JavaScript trình duyệt, gói Worker và hồi quy xác thực/tra cứu. Kiểm tra trình duyệt trên desktop và điện thoại; ghi kết quả thực tế trong nhật ký.
 
 Máy chủ cục bộ dùng `npm start`. Build đóng gói các module và ảnh vào `dist/server/index.js`. Cả bản cục bộ và Worker phục vụ ảnh qua `/product-images/`. Nếu cần khôi phục giao diện, dùng phiên bản mã nguồn trước thay đổi và build lại; không xóa thư mục dữ liệu. GitHub/VPS/Sites chỉ báo triển khai khi có bằng chứng từ môi trường thực tế.
+
+## Chi tiết răng sứ cao cấp
+
+Tám ảnh trên trang chủ dẫn tới trang HT Smile, Lava, Nacera, Cercon, Ceramill, Katana, Venus và Zirconia. Mỗi trang có ảnh thật, phần giới thiệu riêng, các mục mô tả và liên kết nguồn tham khảo từ baohanhzirconia.com. Nội dung được tóm lược, thời hạn Five-T theo từng thẻ bảo hành. Dữ liệu bài nằm trong productDetails của worker/pages.js.

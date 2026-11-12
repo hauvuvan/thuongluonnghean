@@ -160,3 +160,8 @@
 - Đồng bộ nền header #103650 theo ảnh mẫu và chữ trắng trên trang công khai, tra cứu và quản trị. Menu giữ in hoa, trạng thái hiện tại có gạch trắng.
 - npm test, build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
 - Sau phát hành, Vercel xác nhận commit 9d940b0 thành công. Production trả HTTP 200 và có đúng CSS header xanh đậm chữ trắng. Kiểm tra độc lập các trang chính đạt. Chưa kiểm tra trực quan điện thoại hoặc runtime log.
+
+## 2026-11-12 — Asia/Ho_Chi_Minh
+
+- Hoàn thiện tám trang chi tiết răng sứ cao cấp mở từ ảnh trang chủ. Đọc trang nguồn, viết nội dung riêng theo từng dòng, dùng ảnh thực tế và liên kết sản phẩm cùng nhóm. Xem [Các trang công khai](features/public-pages.md).
+- npm test (API/auth/39 URL), build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
