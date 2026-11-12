@@ -154,3 +154,8 @@
 - Đồng bộ nội dung nền trắng chữ đen và chân trang nền #103650 chữ trắng trên trang công khai, tra cứu và quản trị. Chuyển menu sang in hoa cả máy tính và điện thoại. Logo Five-T đã thay ảnh răng ở đầu trang chủ.
 - npm test, build, validate và diff đạt. Phát hành qua GitHub main và Vercel. VPS không áp dụng.
 - Sau triển khai, Vercel xác nhận a0ebc7b thành công. Trang chủ Production trả HTTP 200 với logo, menu in hoa và chân trang mới. Kiểm tra độc lập trang công khai và tra cứu/quản trị đạt. Hình minh họa thẻ và màu trạng thái vẫn có màu riêng. Chưa đo trực quan trên điện thoại hoặc xem runtime log.
+
+## 2026-11-12 11:39 — Asia/Ho_Chi_Minh
+
+- Đồng bộ nền header #103650 theo ảnh mẫu và chữ trắng trên trang công khai, tra cứu và quản trị. Menu giữ in hoa, trạng thái hiện tại có gạch trắng.
+- npm test, build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.

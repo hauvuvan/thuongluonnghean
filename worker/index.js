@@ -122,6 +122,11 @@ footer h3{font-size:17px}.field,input,select,textarea{font-size:16px}.formgrid .
 .customer-warranty{padding:24px;background:#fff}.customer-warranty .sample-card{max-width:720px;padding:28px;box-shadow:0 8px 24px #163b5012}.customer-card-fields{display:grid;gap:16px;margin:0}.customer-card-fields>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:baseline}.customer-card-fields dt{font-size:15px;font-weight:500}.customer-card-fields dd{margin:0;padding-bottom:5px;border-bottom:1px solid #9cab89;font-size:17px;font-weight:600;overflow-wrap:anywhere}.customer-warranty .sample-title b{font-size:20px;overflow-wrap:anywhere}.customer-warranty .sample-title{max-width:58%}.customer-warranty .sample-card-bottom{font-size:15px;flex-wrap:wrap}.customer-warranty .sample-card-bottom strong{overflow-wrap:anywhere}.customer-warranty .sample-card-bottom>div{min-width:0}.customer-warranty .details{max-width:720px;margin:12px auto 0;padding:24px 0 0}
 @media(max-width:600px){.customer-warranty{padding:12px}.customer-warranty .sample-card{padding:18px}.customer-card-fields>div{grid-template-columns:1fr;gap:3px}.customer-card-fields dt{font-size:14px}.customer-card-fields dd{font-size:16px}.customer-warranty .sample-title{font-size:15px}.customer-warranty .sample-title b{font-size:17px}.customer-warranty .details{padding:20px 6px 8px;grid-template-columns:1fr 1fr}.customer-warranty .sample-card-bottom{align-items:flex-start;gap:14px}}
 
+body>header{background:#103650}
+body>header .brand strong,body>header .brand small,body>header .nav a{color:#fff}
+body>header .nav a.active{border-color:#fff}
+body>header a:hover{background:#1c4c6b}
+body>header a:focus-visible{outline-color:#fff}
 .nav a{text-transform:uppercase}
 body{background:#fff;color:#000}
 main,.hero,.searchpanel,.stat,.toolbar,.notice,.result,.admin{background:#fff}

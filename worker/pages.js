@@ -125,16 +125,18 @@ footer h3{font-size:17px}.field,input,select,textarea{font-size:16px}.formgrid .
 @media(max-width:760px){.sample-card{padding:20px;border-radius:17px}.sample-card-top{gap:10px;margin-bottom:20px}.sample-lab{font-size:18px}.sample-lab img{width:38px;height:38px}.sample-title{font-size:16px}.sample-title b{font-size:20px}.sample-card-fields>div{font-size:14px}.sample-card-bottom{flex-wrap:wrap}.cardart:has(.sample-card){margin:16px auto 0}.heroart:has(.sample-card){max-width:420px}}
 @media(max-width:360px){.sample-card{padding:16px}.sample-lab{font-size:16px}.sample-lab img{display:none}.sample-title{font-size:15px}}
 
-header{--navigation-blue:#4f95e4}
+body>header{background:#103650}
+header{--navigation-blue:#103650}
+header .brand b,header .brand small{color:#fff}
 header .header-navigation a{text-transform:uppercase}
 .header-navigation,header .brandrow .outline{background:var(--navigation-blue)}
 header .header-navigation a,header .header-navigation summary,header .brandrow .outline{
- color:#000;font-size:17px;font-weight:700;
+ color:#fff;font-size:17px;font-weight:700;
 }
-header .brandrow .outline{border-color:#2866a8}
-header .header-navigation a[aria-current="page"]{border-color:#000}
-header .header-navigation a:hover,header .brandrow .outline:hover{background:#75adf0}
-header .header-navigation :focus-visible,header .brandrow .outline:focus-visible{outline-color:#000}
+header .brandrow .outline{border-color:#fff}
+header .header-navigation a[aria-current="page"]{border-color:#fff}
+header .header-navigation a:hover,header .brandrow .outline:hover{background:#1c4c6b}
+header .header-navigation :focus-visible,header .brandrow .outline:focus-visible{outline-color:#fff}
 @media(min-width:761px){
  header .header-navigation nav{gap:12px;flex-wrap:wrap}
  header .header-navigation nav a{padding-inline:8px}
