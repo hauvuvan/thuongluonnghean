@@ -178,3 +178,8 @@
 - Dùng chung header cho trang chủ, trang công khai, tra cứu và quản trị. Bỏ menu kiến thức/hướng dẫn và khối bài hướng dẫn trên trang chủ. Mở lại cửa hàng với 16 ảnh sản phẩm, phân trang 12+4 và lưới bốn cột. Xem [các trang công khai](features/public-pages.md).
 - npm test (API/auth/39 URL), build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
 - Sau triển khai, Vercel xác nhận commit 4e57b16. Trang /shop/ Production trả HTTP 200, header chung và 12 ảnh sản phẩm, hết thông báo bảo trì. QA độc lập xác nhận header khớp giữa hai layout, 12+4 sản phẩm và preview hợp lệ. Chưa đo trực quan trên điện thoại hoặc xem runtime log.
+
+## 2026-11-12 13:54 — Asia/Ho_Chi_Minh
+
+- Ba sản phẩm đánh dấu X (Cao cấp Lava, Cercon HT, Emax) hiển thị Đang bảo trì ở trang chi tiết. Bỏ chữ tên, nhóm và Xem chi tiết dưới các ô sản phẩm, giữ ảnh có alt và liên kết.
+- npm test (API/auth/39 URL), build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.

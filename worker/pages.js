@@ -136,7 +136,11 @@ function productPicture(product,className='card-photo'){
  const imageId=product.id;
  return '<img class="'+className+'" src="/product-images/'+imageId+'.webp" alt="Răng sứ '+esc(product.name)+'" width="600" loading="lazy" decoding="async">';
 }
-function cards(list){return '<div class="cards">'+list.map(p=>'<article class="product" data-name="'+esc(p.name.toLowerCase())+'"><a href="'+p.path+'">'+productPicture(p)+'<div class="card-body"><small>'+groups.find(g=>g[0]===p.group)[1]+'</small><h3>'+esc(p.name)+'</h3><span class="more">Xem chi tiết →</span></div></a></article>').join('')+'</div>'}
+function cards(list){
+ return '<div class="cards">'+list.map(product=>
+  '<article class="product" data-name="'+esc(product.name.toLowerCase())+'"><a href="'+product.path+'">'+productPicture(product)+'</a></article>'
+ ).join('')+'</div>';
+}
 function homeGallery([id,label,slug]){
  const photos=items.filter(product=>product.group===id).map(product=>
   '<a href="'+product.path+'"><img src="/product-images/'+product.id+'.webp" alt="'+esc(product.name)+'" loading="lazy" decoding="async"></a>'
@@ -188,6 +192,10 @@ else if(shopUnderMaintenance&&(path==='/shop/'||path==='/shop/page/2/')){
  body='<section class="pagehead"><div class="wrap"><h1>Sản phẩm</h1><h2>Đang bảo trì</h2><p>Bạn vẫn có thể tra cứu bảo hành trong thời gian này.</p><div class="actions"><a class="button" href="/tra-cuu-the-bao-hanh/">Tra cứu bảo hành</a><a class="outline" href="/">Về trang chủ</a></div></div></section>';
 }
 else if(path==='/shop/'||path==='/shop/page/2/'||groups.some(g=>path==='/'+g[2]+'/')||path.startsWith('/product-category/')){let group=groups.find(g=>path==='/'+g[2]+'/');let brand;if(path.startsWith('/product-category/')){if(!/^\/product-category\/[^/]+\/$/.test(path))return null;const id=path.split('/')[2].replace(/^rang-su-/,'');brand=items.find(p=>p.id===id);if(!brand&&!['dd-bio','kerox'].includes(id))return null;if(!brand)brand={name:id==='dd-bio'?'DD-Bio':'Kerox',empty:true};}title=brand?'Răng sứ '+brand.name:group?group[1]:'Tất cả sản phẩm';const list=brand?(brand.empty?[]:[brand]):group?items.filter(p=>p.group===group[0]):path==='/shop/page/2/'?items.slice(12):items.slice(0,12);body=heading('',title,'Tìm theo tên răng sứ ghi trên thẻ bảo hành hoặc giấy tờ nha khoa đã đưa cho bạn.')+'<section class="wrap section catalog"><div class="catalogtools"><div class="chips"><a '+(!group&&!brand?'aria-current="page"':'')+' href="/shop/">Tất cả</a>'+groups.map(g=>'<a '+(group?.[0]===g[0]?'aria-current="page"':'')+' href="/'+g[2]+'/">'+g[1]+'</a>').join('')+'</div><div><label for="catalog-search">Tìm tên sản phẩm</label><input id="catalog-search" type="search" placeholder="Ví dụ: Katana" autocomplete="off"></div></div><p id="catalog-count" class="muted" aria-live="polite">'+list.length+' sản phẩm</p>'+cards(list)+(path==='/shop/'||path==='/shop/page/2/'?'<nav class="pagination" aria-label="Trang sản phẩm"><a href="/shop/">Trang 1</a><a href="/shop/page/2/">Trang 2</a></nav>':'')+(brand?.empty?'<p>Chưa có sản phẩm nào trong nhóm này.</p>':'')+'<p id="catalog-empty" hidden>Không tìm thấy sản phẩm. Bạn thử kiểm tra lại tên nhé.</p></section>'+cta();}
+else if(['/rang-su-cao-cap-lava/','/rang-su-cercon-ht/','/rang-su-emax/'].includes(path)){
+ title='Đang bảo trì';
+ body='<section class="wrap section"><h1>Đang bảo trì</h1></section>';
+}
 else if(items.some(product=>product.path===path)){
  const product=items.find(product=>product.path===path);
  const group=groups.find(group=>group[0]===product.group);
