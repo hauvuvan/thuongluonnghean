@@ -125,7 +125,25 @@ footer h3{font-size:17px}.field,input,select,textarea{font-size:16px}.formgrid .
 @media(max-width:760px){.sample-card{padding:20px;border-radius:17px}.sample-card-top{gap:10px;margin-bottom:20px}.sample-lab{font-size:18px}.sample-lab img{width:38px;height:38px}.sample-title{font-size:16px}.sample-title b{font-size:20px}.sample-card-fields>div{font-size:14px}.sample-card-bottom{flex-wrap:wrap}.cardart:has(.sample-card){margin:16px auto 0}.heroart:has(.sample-card){max-width:420px}}
 @media(max-width:360px){.sample-card{padding:16px}.sample-lab{font-size:16px}.sample-lab img{display:none}.sample-title{font-size:15px}}
 
-.hero-real-teeth{width:100%;max-width:500px;margin:auto;border-radius:48% 48% 18px 18px;overflow:hidden;background:#dceef3;border:6px solid #fff;box-shadow:0 16px 36px #10365012}.hero-real-teeth img{display:block;width:100%;height:auto;aspect-ratio:600/581;object-fit:cover}@media(max-width:600px){.hero-real-teeth{max-width:360px;border-width:4px}}
+.homehero .herogrid{
+ grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+ gap:clamp(28px,5vw,64px);
+ min-height:0;
+ padding-block:clamp(28px,4vw,52px);
+}
+.homehero h1{font-size:clamp(32px,4.3vw,52px);margin:0 0 18px}
+.homehero p{margin:0}
+.hero-real-teeth{
+ width:100%;max-width:420px;margin:0 auto;
+ border:6px solid #fff;border-radius:48% 48% 18px 18px;
+ overflow:hidden;background:#dceef3;box-shadow:0 16px 36px #10365012;
+}
+.hero-real-teeth img{display:block;width:100%;height:auto}
+@media(max-width:760px){
+ .homehero .herogrid{grid-template-columns:minmax(0,1fr);gap:24px}
+ .homehero h1{font-size:clamp(28px,5.5vw,38px);margin-bottom:12px}
+ .hero-real-teeth{max-width:300px;border-width:4px}
+}
 `;
 const homeGalleryCss=`
 .home-gallery{padding:24px 0;text-align:center}

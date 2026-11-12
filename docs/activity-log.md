@@ -125,3 +125,8 @@
 - Bỏ tám liên kết thương hiệu được gạch đỏ ở chân trang. Giữ Zirconia, ba nhóm răng sứ và Tất cả sản phẩm. Xem [các trang công khai](features/public-pages.md).
 - npm test, build, validate và diff đạt. Đích phát hành GitHub main qua Vercel. VPS không áp dụng.
 - Sau phát hành 11:25 Asia/Ho_Chi_Minh, Vercel xác nhận commit e91452d. Codex và agent qa_footer kiểm tra nội dung chân trang, còn đúng 5 liên kết. Trang chủ trên Production trả HTTP 200 với chân trang mới. Kiểm tra chỉ đọc, chưa xem runtime log.
+
+## 2026-11-12 11:27 — Asia/Ho_Chi_Minh
+
+- Căn lại khối đầu trang theo ảnh. Cân hai cột, thêm khoảng cách trên dưới, giới hạn ảnh 420 px và xếp một cột dưới 760 px. Xem [các trang công khai](features/public-pages.md).
+- npm test, build, validate và diff đạt. Đích phát hành là GitHub main qua Vercel. VPS không áp dụng.
