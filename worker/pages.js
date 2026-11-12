@@ -126,6 +126,7 @@ footer h3{font-size:17px}.field,input,select,textarea{font-size:16px}.formgrid .
 @media(max-width:360px){.sample-card{padding:16px}.sample-lab{font-size:16px}.sample-lab img{display:none}.sample-title{font-size:15px}}
 
 header{--navigation-blue:#4f95e4}
+header .header-navigation a{text-transform:uppercase}
 .header-navigation,header .brandrow .outline{background:var(--navigation-blue)}
 header .header-navigation a,header .header-navigation summary,header .brandrow .outline{
  color:#000;font-size:17px;font-weight:700;
@@ -160,10 +161,16 @@ header .header-navigation :focus-visible,header .brandrow .outline:focus-visible
  .homehero h1{font-size:clamp(28px,5.5vw,38px);margin-bottom:12px}
  .hero-logo{max-width:300px}
 }
+
+body{background:#fff;color:#000}
+main,main .homehero,main .pagehead,main .quick,main .cta,main .infobox{background:#fff}
+main h1,main h2,main h3,main p,main li,main label,main .eyebrow,main .muted,main .lead,main .more,main .breadcrumb,main .editorial small,main .card-body small{color:#000}
+footer{background:#103650;color:#fff}
+footer h3,footer p,footer a,footer .brand b,footer .copyright{color:#fff}
 `;
 const homeGalleryCss=`
 .home-gallery{padding:24px 0;text-align:center}
-.home-gallery h2{margin:0 0 16px;color:#1e1e1e;font-size:clamp(19px,2.5vw,27px);line-height:1.25;text-transform:uppercase}
+.home-gallery h2{margin:0 0 16px;color:#000;font-size:clamp(19px,2.5vw,27px);line-height:1.25;text-transform:uppercase}
 .home-photos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .home-photos a{display:block;padding:8px;border:1px dashed #bd6a6a;border-radius:9px;background:#fff}
 .home-photos img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}

@@ -148,3 +148,8 @@
 
 - Thay ảnh răng ở đầu trang chủ bằng logo FIVE-T Dental Lab. Dùng khung vuông bo góc để hiện trọn logo, tối đa 420 px trên máy tính và 300 px trên điện thoại. Xem [các trang công khai](features/public-pages.md).
 - npm test (API, xác thực, 39 URL), build, validate và diff đạt. Phát hành qua GitHub main và Vercel. VPS không áp dụng.
+
+## 2026-11-12 11:38 — Asia/Ho_Chi_Minh
+
+- Đồng bộ nội dung nền trắng chữ đen và chân trang nền #103650 chữ trắng trên trang công khai, tra cứu và quản trị. Chuyển menu sang in hoa cả máy tính và điện thoại. Logo Five-T đã thay ảnh răng ở đầu trang chủ.
+- npm test, build, validate và diff đạt. Phát hành qua GitHub main và Vercel. VPS không áp dụng.
