@@ -95,3 +95,9 @@
 - Agent qa_form kiểm tra độc lập API mới/cũ, mã có dấu, mốc năm, ngày nhuận và dữ liệu thiếu SĐT đều đạt. Trình duyệt trên Production xác nhận các lựa chọn Zirconia/Kim loại/Titan, radio 5/7/10 và Lab Five-T chỉ đọc trong form.
 - Chưa thử thao tác lưu thẻ qua phiên đăng nhập Production ở đợt này. Các chỉnh sửa đồng thời về ảnh thẻ minh họa và Xem_Web.command đang có trong workspace được giữ lại.
 - QA read-only sau triển khai trên domain chính cũng đạt: /admin HTTP 200 có đủ trường mới và JS hợp lệ, /api/cards thiếu phiên trả 401, POST tra cứu chuỗi () trả 200 với danh sách rỗng. Không tạo hoặc sửa dữ liệu thật.
+
+## 2026-11-12 11:10 — Asia/Ho_Chi_Minh
+
+- Yêu cầu đẩy toàn bộ thay đổi của dự án lên GitHub. Bản cập nhật gồm thiết kế thẻ minh họa Five-T và trình mở website trên máy. Xem [tổng quan dự án](README.md).
+- Kiểm tra npm test (API, xác thực và 39 URL), build, validate, cú pháp Xem_Web.command và diff đều đạt.
+- Đích GitHub là nhánh codex/supabase-vercel. Lượt này chỉ đồng bộ GitHub theo yêu cầu. Không phát hành Production hoặc VPS.
