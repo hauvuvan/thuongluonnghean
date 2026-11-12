@@ -58,6 +58,15 @@ const tick=()=>new Promise(resolve=>setImmediate(resolve));
  assert.equal(b.nodes.get('adminbody').classList.contains('hidden'),false);
  assert.equal(b.nodes.get('loginform'),undefined);
 }
+// Incorrect passwords preserve the form and allow another attempt.
+{
+ const b=browser(async path=>response(path==='/api/auth/status'?{mode:'supabase'}:{error:'Email hoặc mật khẩu không đúng.'},path==='/api/auth/status'?200:401));
+ await b.run('loadAdmin()');
+ b.nodes.get('username').value='admin@example.test';b.nodes.get('password').value='incorrect';
+ await b.nodes.get('loginform').onsubmit({preventDefault(){}});
+ assert.match(b.nodes.get('loginerror').innerHTML,/Email hoặc mật khẩu không đúng/);
+ assert.equal(b.nodes.get('loginbtn').disabled,false);
+}
 // A connection failure ends the loader, provides recovery, and a retry succeeds.
 {
  let failed=true;

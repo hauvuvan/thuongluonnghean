@@ -197,3 +197,10 @@
 - Sửa: giới hạn mỗi yêu cầu 15 giây, thông báo lỗi tiếng Việt và nút thử lại; giữ lỗi sau đăng nhập; về form khi hết phiên, chặn tải đồng thời; bỏ /api/me dư, tối ưu tính ngày và trường null trong bảng. Không thay dữ liệu/schema.
 - Kiểm tra: npm test, build, validate, git diff --check đạt. Agent qa_admin kiểm thử hồi quy giao diện độc lập. Tài liệu: [Đăng nhập và tải quản trị](features/admin-loading.md).
 - GitHub: chuẩn bị commit/push main để Vercel tự phát hành. Đang chờ xác minh bản phát hành và phiên đăng nhập thật. VPS không áp dụng.
+
+### Kiểm thử sau phát hành quản trị — 2026-11-12 14:15 Asia/Ho_Chi_Minh
+
+- Đã ghép bản sửa riêng lên origin/main mới nhất, giữ các cập nhật giao diện và xác thực nhiều quản trị viên. Push commit 0721e46 lên main thành công. GitHub/Vercel báo Deployment has completed, success: https://vercel.com/hauvuhdvn-8559s-projects/thuongluonnghean/6qq5YGzHFeFTNekxrKudZpVy93ZY.
+- Môi trường https://thuongluonnghean.vercel.app. Agent qa_admin kiểm tra độc lập lúc 14:13: /admin 200 có timeout/retry, không gọi /api/me dư; auth/status 200 mode supabase; cards thiếu phiên 401; trang chủ 200; logo 200 image/png; POST tra cứu mã thử không tồn tại trả 200 records rỗng. Không ghi dữ liệu thật.
+- Codex quan sát trình duyệt sau reload: loader kết thúc và hiện form email/mật khẩu. Chưa có phiên đăng nhập thật để nghiệm thu danh sách sau đăng nhập; chưa truy cập runtime logs. Không khẳng định nguyên nhân hạ tầng của ảnh đã được tái hiện. VPS không áp dụng.
+- Kiểm tra trên mã mới nhất: toàn bộ npm test gồm cloud-auth và admin-ui, build, validate, diff đều đạt. Bổ sung hồi quy mật khẩu sai giữ form và mở lại nút đăng nhập. Phần bổ sung chỉ test/log, không thay hành vi chạy.
