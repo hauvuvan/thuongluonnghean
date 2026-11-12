@@ -165,3 +165,4 @@
 
 - Hoàn thiện tám trang chi tiết răng sứ cao cấp mở từ ảnh trang chủ. Đọc trang nguồn, viết nội dung riêng theo từng dòng, dùng ảnh thực tế và liên kết sản phẩm cùng nhóm. Xem [Các trang công khai](features/public-pages.md).
 - npm test (API/auth/39 URL), build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
+- Sau triển khai 11:52 Asia/Ho_Chi_Minh, Vercel báo thành công cho commit 6bfc72a. Trang Lava trên domain chính có ảnh và nội dung riêng đúng bản mới. Agent qa_details xác minh tám đường dẫn, ảnh và liên kết nội bộ trên bản cục bộ đều đạt. Chưa xem runtime log.
