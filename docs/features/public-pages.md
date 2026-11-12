@@ -6,7 +6,7 @@
 
 Mở rộng website từ tra cứu/quản trị thành bộ trang giới thiệu theo cấu trúc menu của [website tham khảo](https://baohanhzirconia.com/). Khảo sát ngày 11/11/2026 bằng trình duyệt: trang chủ, giới thiệu, cửa hàng, kiến thức, liên hệ và chi tiết Katana; tên và URL 16 sản phẩm được lấy từ các liên kết công khai.
 
-Bản dựng giữ các đường dẫn chính và tổ chức thông tin; giao diện tiếp tục dùng bộ nhận diện xanh navy/cyan của bản hiện có. Nội dung biên soạn mới, không sao chép nguyên văn toàn bộ bài viết hay hình ảnh có bản quyền từ nguồn mẫu. Hình sản phẩm là minh họa; không dùng làm bằng chứng nhận diện sản phẩm thực tế.
+Bản dựng giữ các đường dẫn chính và tổ chức thông tin; giao diện tiếp tục dùng bộ nhận diện xanh navy/cyan của bản hiện có. Nội dung bài viết được biên soạn mới. 12 ảnh trên lưới trang chủ lấy từ website tham khảo theo yêu cầu và được lưu dưới dạng WebP trong `worker/product-images/`. Hình ảnh phục vụ minh họa, không dùng làm bằng chứng nhận diện sản phẩm thực tế.
 
 ## Bản đồ trang
 
@@ -16,7 +16,7 @@ Bản dựng giữ các đường dẫn chính và tổ chức thông tin; giao 
 | Giới thiệu | `/ve-chung-toi/` |
 | Danh mục | `/shop/`, `/shop/page/2/` |
 | Nhóm sản phẩm | `/rang-su-cao-cap/`, `/rang-su-kim-loai/`, `/dong-toan-su/` |
-| Chi tiết sản phẩm | 16 đường dẫn theo danh mục trên trang chủ và cửa hàng |
+| Chi tiết sản phẩm | 16 đường dẫn theo danh mục cửa hàng |
 | Danh mục thương hiệu | `/product-category/<ten-thuong-hieu>/` theo liên kết chân trang |
 | Tra cứu | `/tra-cuu-the-bao-hanh/` |
 | Kiến thức | `/chuyen-muc/tu-van-kien-thuc/` và các bài hướng dẫn |
@@ -26,6 +26,8 @@ Bản dựng giữ các đường dẫn chính và tổ chức thông tin; giao 
 ## Hành vi
 
 Menu điều hướng dùng liên kết thật, có thể mở trực tiếp từng trang. Danh mục có tìm kiếm/lọc; chi tiết sản phẩm có thông tin riêng, liên kết nhóm và sản phẩm liên quan. Danh mục thương hiệu chưa có sản phẩm hiển thị trạng thái rỗng rõ ràng.
+
+Trang chủ hiển thị 8 ảnh Răng sứ cao cấp và 4 ảnh Răng sứ kim loại, mỗi ảnh mở trang chi tiết tương ứng. Lưới có bốn cột trên máy tính, hai cột ở chiều rộng tối đa 650 px. Cụm Dòng toàn sứ và Đối tác không xuất hiện trong nội dung chính của trang chủ. Danh mục Dòng toàn sứ vẫn truy cập được qua cửa hàng và chân trang.
 
 Tra cứu bảo hành tiếp tục gọi API hiện có. Khách không xem được ghi chú nội bộ hoặc số điện thoại đầy đủ. Quyền quản trị không thay đổi.
 
@@ -39,4 +41,4 @@ Danh mục được quản lý trong mã nguồn, chưa có CMS để biên tậ
 
 Kiểm tra đường dẫn, liên kết nội bộ, lỗi 404, cú pháp JavaScript trình duyệt, gói Worker và hồi quy xác thực/tra cứu. Kiểm tra trình duyệt trên desktop và điện thoại; ghi kết quả thực tế trong nhật ký.
 
-Máy chủ cục bộ dùng `npm start`. Build gộp hai module thành `dist/server/index.js`. Nếu cần khôi phục giao diện, dùng phiên bản mã nguồn trước thay đổi và build lại; không xóa thư mục dữ liệu. GitHub/VPS/Sites chỉ báo triển khai khi có bằng chứng từ môi trường thực tế.
+Máy chủ cục bộ dùng `npm start`. Build đóng gói các module và ảnh vào `dist/server/index.js`. Cả bản cục bộ và Worker phục vụ ảnh qua `/product-images/`. Nếu cần khôi phục giao diện, dùng phiên bản mã nguồn trước thay đổi và build lại; không xóa thư mục dữ liệu. GitHub/VPS/Sites chỉ báo triển khai khi có bằng chứng từ môi trường thực tế.

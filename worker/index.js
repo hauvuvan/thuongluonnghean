@@ -1,4 +1,5 @@
 import {renderPage} from './pages.js';
+import {productImages} from './product-images.js';
 const json = (data, status=200) => new Response(JSON.stringify(data), {status, headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 export function validate(body) {
  const fields=['code','customer','phone','product','clinic','positions','start','end','status','notes'];
@@ -16,6 +17,11 @@ export function validate(body) {
 }
 export default {async fetch(request,env) {
  const url=new URL(request.url), path=url.pathname;
+ const image=productImages.get(path);
+ if(image && ['GET','HEAD'].includes(request.method)){
+  const body=request.method==='HEAD'?null:Uint8Array.from(atob(image),character=>character.charCodeAt(0));
+  return new Response(body,{headers:{'Content-Type':'image/webp','Cache-Control':'public, max-age=86400','X-Content-Type-Options':'nosniff'}});
+ }
  if(!path.startsWith('/api/')) {const page=renderPage(path);if(!page&&!['/tra-cuu-the-bao-hanh','/tra-cuu-the-bao-hanh/','/admin','/admin/'].includes(path))return new Response('Không tìm thấy trang',{status:404}); return new Response(page||HTML,{headers:{'Content-Type':'text/html; charset=utf-8','X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin','Content-Security-Policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'self'"}});}
  try {
  if(request.method!=='GET' && request.headers.get('origin')!==url.origin) return json({error:'Yêu cầu không hợp lệ.'},403);

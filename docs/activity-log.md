@@ -18,3 +18,11 @@
 - Trình duyệt: desktop trang chủ/danh mục, tìm Katana còn1 kết quả, tìm không khớp hiện rỗng; tra cứu từ trang chủ tự điền và gửi đúng. Điện thoại375x812: trang chủ, Katana, mở menu và đi liên hệ đạt; trang đã đo không tràn ngang. Chưa kiểm tra UI quản trị sau đăng nhập; hồi quy API/auth đạt. Môi trường http://127.0.0.1:4180 dùng dữ liệu thử riêng trong /tmp, không dữ liệu thật.
 - Git: đưa các tệp chạy/build/test/cấu hình cần thiết đã tồn tại nhưng chưa được theo dõi vào kho để commit chạy lại đầy đủ; không kèm data/outputs/bí mật. GitHub chưa có remote nên chưa push.
 - Sites: ID trong cấu hình trả project_not_found, chưa xuất bản. Không tự tạo Site khác hoặc đổi quyền. VPS chưa có cấu hình/đích, chưa triển khai; không có nghiệm thu production.
+
+## 2026-11-12 09:24 — Asia/Ho_Chi_Minh
+
+- Yêu cầu: làm lưới trang chủ giống mẫu, mỗi ô chỉ có ảnh, bỏ phần Dòng toàn sứ và Đối tác.
+- Thay đổi: dùng 12 ảnh từ trang mẫu đã tối ưu WebP, chia 8 ảnh cao cấp và 4 ảnh kim loại. Mỗi ảnh dẫn tới chi tiết sản phẩm. Giữ trang danh mục toàn sứ riêng và luồng tra cứu. Xem [Các trang công khai](features/public-pages.md).
+- Kiểm thử độc lập: `npm test` (API, xác thực và 39 URL), build, validate, 12 ảnh và liên kết sản phẩm HTTP 200; gói Worker trả đủ ảnh. Bản xem thử cổng 4173 đã khởi động lại. Trình duyệt xác nhận đủ 12 ảnh, bốn cột ở 1033 px, hai cột ở 375 px và không tràn ngang.
+- GitHub: nhánh main từ xa có commit khác với HEAD cục bộ. Yêu cầu lấy lịch sử nhánh từ xa bị từ chối nên chưa đối chiếu lịch sử hoặc push.
+- Sites báo không tìm thấy dự án đã cấu hình. Chưa có đích VPS và chưa triển khai production.
