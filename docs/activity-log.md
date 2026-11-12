@@ -72,3 +72,11 @@
 - Đã xác nhận đúng một tài khoản Supabase được xác minh và lưu UUID vào SUPABASE_ADMIN_USER_ID cho Vercel Production.
 - Đã dựng bản Production chờ phát hành, deployment dpl_Ac4HTWbNnkSxFuxWqALDQxbRDHiY, commit 6473fb3, trạng thái READY. URL https://thuongluonnghean-7ciwrxnvb-hauvuhdvn-8559s-projects.vercel.app. Đã tắt tự gắn domain để kiểm tra trước khi phát hành.
 - Phiên công cụ Vercel/Supabase bị gỡ trong lúc kiểm thử. HTTP bên ngoài nhận 302 từ lớp bảo vệ Vercel. Chưa hoàn tất kiểm thử dữ liệu/đăng nhập, chưa promote tên miền chính. Cần khôi phục kết nối Vercel để tiếp tục kiểm tra và khôi phục cấu hình tự gắn domain sau phát hành.
+
+### Production đã phát hành — 2026-11-12 10:30 Asia/Ho_Chi_Minh
+
+- Môi trường https://thuongluonnghean.vercel.app đã trỏ tới deployment dpl_Ac4HTWbNnkSxFuxWqALDQxbRDHiY, commit 6473fb3. Dashboard xác nhận Current Domains. Đã khôi phục Auto-assign Custom Production Domains sau kiểm tra.
+- Codex quan sát phiên quản trị do người dùng đăng nhập: danh sách 0 thẻ tải thành công từ Supabase, có nút đăng xuất và mở được form thêm thẻ. Chưa ghi thử thẻ trên database production.
+- Agent qa_release kiểm tra độc lập sau phát hành: trang chủ, sản phẩm bảo trì, tra cứu, quản trị đều HTTP 200; logo và Katana đúng MIME; auth/status trả mode supabase; cards và me thiếu phiên trả 401; POST tra cứu mã giả trả 200 với records rỗng. Tên miền truy cập công khai được.
+- Bằng chứng trình duyệt: tra cứu mã giả trên domain chính hiện trạng thái không tìm thấy; ảnh xác nhận trang chủ lưu tạm tại /tmp/five-t-production.png. Kiểm tra log error/fatal trước promotion trống; chưa kiểm tra lại runtime log sau promotion do công cụ connector không có trong phiên.
+- GitHub tiếp tục nhánh codex/supabase-vercel. VPS không áp dụng.
