@@ -23,6 +23,10 @@ Dữ liệu và tài khoản nằm trong `data/warranties.sqlite`, được gi�
 
 Bản chạy trên máy dùng mật khẩu băm scrypt, phiên đăng nhập 8 giờ qua cookie HttpOnly/SameSite, giới hạn thử đăng nhập và kiểm tra nguồn yêu cầu. Khách tra cứu không cần đăng nhập. Không có mật khẩu quản trị mặc định.
 
+## Triển khai Supabase và Vercel
+
+Xem [thiết lập Supabase, Vercel và chuyển dữ liệu SQLite](docs/deployment/supabase-vercel.md).
+
 ## Triển khai máy chủ Node.js
 
 `npm start` mặc định chỉ lắng nghe trên `127.0.0.1:4173`.

@@ -6,3 +6,5 @@ outputs/
 .env*
 .dev.vars*
 *.sqlite*
+
+.vercel/

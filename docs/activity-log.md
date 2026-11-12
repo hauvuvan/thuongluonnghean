@@ -40,3 +40,12 @@
 - Thay đổi: làm gọn trang chủ, tra cứu, giới thiệu, danh mục, chi tiết, hướng dẫn và liên hệ. Bỏ khẩu hiệu và mô tả chung chung, nói rõ cách tìm thẻ và khi nào nên hỏi nha khoa. Giữ ảnh, logo và trạng thái bảo trì của cửa hàng. Xem [Các trang công khai](features/public-pages.md).
 - Kiểm thử độc lập: `npm test`, build, validate và kiểm tra diff đều đạt. Đã kiểm tra API tra cứu mã và số điện thoại, 39 URL, 12 ảnh, logo và trạng thái bảo trì. Thử nút Xem kết quả mẫu trên trình duyệt và xác nhận dữ liệu minh họa hiện đúng. Đã nạp lại bản xem thử trên cổng 4173.
 - GitHub: chưa đối chiếu nhánh từ xa sau lần fetch bị từ chối trước đó, chưa push. Sites vẫn báo không tìm thấy dự án đã cấu hình. Chưa có đích VPS và chưa triển khai production.
+
+## 2026-11-12 09:41 — Asia/Ho_Chi_Minh
+
+- Yêu cầu: tối ưu dữ liệu bảo hành trên Supabase và triển khai website trên Vercel.
+- Thay đổi: thêm migration Postgres có index mã, số điện thoại và thời điểm cập nhật, hàm tra cứu giới hạn trường công khai, quyền truy cập theo vai trò và phiên quản trị thu hồi được. Vercel dùng Supabase Auth và PostgREST. Bản xem thử trên máy vẫn dùng SQLite. Đã kiểm tra bản SQLite hiện tại có 0 thẻ, chưa có thẻ cần chuyển.
+- Kiểm thử độc lập: `npm test` (API, xác thực và 39 URL), build Worker, validate và diff đều đạt. PostgreSQL nhúng kiểm tra migration, quyền và index. Dữ liệu giả kiểm tra xuất/nhập, bảo toàn dữ liệu, rollback khi trùng. Mô phỏng Supabase kiểm tra đăng nhập/đăng xuất, tra cứu, ghi thẻ, lỗi và giới hạn kích thước.
+- Tài liệu: [Triển khai Supabase và Vercel](deployment/supabase-vercel.md).
+- GitHub: mã nguồn gốc trên `origin/main` trùng bản trước các thay đổi cục bộ nhưng lịch sử commit khác. Chuẩn bị nhánh `codex/supabase-vercel` dựa trên `origin/main`.
+- Cloud: Vercel yêu cầu xác nhận quyền truy cập nhóm. Kết nối Supabase chưa liệt kê được project, chưa chạy migration trên cloud. Chưa triển khai production, chưa kiểm thử sau triển khai. VPS không áp dụng.

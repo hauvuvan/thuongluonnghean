@@ -1,0 +1,11 @@
+.git
+.vercel
+data
+dist
+outputs
+preview
+site.tar.gz
+.env*
+.dev.vars*
+**/*.sqlite*
+**/*.dump

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "mkdir -p dist/vercel && cp -R worker/brand worker/product-images dist/vercel/",
+  "outputDirectory": "dist/vercel",
+  "functions": {
+    "api/site.mjs": {
+      "includeFiles": "worker/{brand,product-images}/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/", "destination": "/api/site?__route=__home" },
+    { "source": "/:path(.*)", "destination": "/api/site?__route=:path" }
+  ]
+}
