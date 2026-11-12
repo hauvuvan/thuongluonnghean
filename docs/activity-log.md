@@ -131,3 +131,8 @@
 - Căn lại khối đầu trang theo ảnh. Cân hai cột, thêm khoảng cách trên dưới, giới hạn ảnh 420 px và xếp một cột dưới 760 px. Xem [các trang công khai](features/public-pages.md).
 - npm test, build, validate và diff đạt. Đích phát hành là GitHub main qua Vercel. VPS không áp dụng.
 - Production xác nhận commit d3c6fb4 triển khai thành công. Trang chủ trả HTTP 200 với CSS căn chỉnh mới. Kiểm tra chỉ đọc.
+
+## 2026-11-12 11:29 — Asia/Ho_Chi_Minh
+
+- Đổi khối đầu trang sang nền xanh dương nhạt #dbeafe, chữ tiêu đề và mô tả màu đen theo yêu cầu. Xem [các trang công khai](features/public-pages.md).
+- npm test, build, validate và diff đạt. Phát hành qua GitHub main và Vercel. VPS không áp dụng.
