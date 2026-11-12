@@ -142,3 +142,4 @@
 
 - Tăng cỡ chữ menu và nút Tra cứu thẻ lên 17 px trên desktop, 16 px trên điện thoại. Dùng chữ đen và nền xanh dương #4f95e4. Bỏ dải chữ BẢO HÀNH ĐIỆN TỬ FIVE-T phía trên logo ở các trang công khai dùng chung đầu trang. Xem [các trang công khai](features/public-pages.md).
 - npm test, build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
+- Sau phát hành, Vercel báo thành công cho commit 237697a. Trang chủ Production trả HTTP 200, có màu menu mới và đã bỏ dải chữ trước logo. Kiểm tra chỉ đọc. Chưa xem runtime log.
