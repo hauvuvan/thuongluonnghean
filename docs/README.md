@@ -4,6 +4,7 @@ Website giới thiệu sản phẩm phục hình và quản lý, tra cứu thẻ
 
 ## Tài liệu
 
+- [Form thẻ bảo hành](features/warranty-form.md)
 - [Các trang công khai và bản đồ trang](features/public-pages.md)
 - [Thiết lập, API vận hành, kiểm thử và triển khai](../README.md)
 - [Triển khai Supabase và Vercel](deployment/supabase-vercel.md)

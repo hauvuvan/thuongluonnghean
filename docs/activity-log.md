@@ -80,3 +80,11 @@
 - Agent qa_release kiểm tra độc lập sau phát hành: trang chủ, sản phẩm bảo trì, tra cứu, quản trị đều HTTP 200; logo và Katana đúng MIME; auth/status trả mode supabase; cards và me thiếu phiên trả 401; POST tra cứu mã giả trả 200 với records rỗng. Tên miền truy cập công khai được.
 - Bằng chứng trình duyệt: tra cứu mã giả trên domain chính hiện trạng thái không tìm thấy; ảnh xác nhận trang chủ lưu tạm tại /tmp/five-t-production.png. Kiểm tra log error/fatal trước promotion trống; chưa kiểm tra lại runtime log sau promotion do công cụ connector không có trong phiên.
 - GitHub tiếp tục nhánh codex/supabase-vercel. VPS không áp dụng.
+
+## 2026-11-12 10:37 — Asia/Ho_Chi_Minh
+
+- Yêu cầu: form mã bảo hành nhập tay, chọn chất liệu, số răng nhập, chọn mốc 5/7/10 năm và ngày bắt đầu, Lab Five-T cố định và nha khoa nhập tay.
+- Thay đổi: form mới và API tự tính ngày hết hạn, xử lý 29/2; hỗ trợ mã tên tiếng Việt, giữ tương thích thẻ cũ. Thông tin khách hàng chuyển vào phần mở rộng và không bắt buộc. Sửa tra cứu để mã ký tự không khớp nhầm các thẻ thiếu số điện thoại.
+- Kiểm tra: npm test, build, validate đạt; bổ sung hồi quy mốc năm, mã có dấu, ngày nhuận, trường không bắt buộc và tra cứu chuỗi ký hiệu.
+- Tài liệu [Form thẻ bảo hành](features/warranty-form.md). Giữ thay đổi riêng của người dùng trong Xem_Web.command.
+- GitHub: chuẩn bị push nhánh codex/supabase-vercel. Vercel chờ cập nhật; VPS không áp dụng.

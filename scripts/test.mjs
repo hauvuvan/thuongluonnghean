@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import worker from '../worker/index.js';
+import worker,{warrantyEnd} from '../worker/index.js';
 import {makeDB} from './local-db.mjs';
 const env={DB:makeDB(),ADMIN_USER_ID:'owner'};
 async function call(path,method='GET',body,user){const headers={'Origin':'https://test.local','Content-Type':'application/json'};if(user)headers['oai-authenticated-user-id']=user;const r=await worker.fetch(new Request('https://test.local'+path,{method,headers,body:body?JSON.stringify(body):undefined}),env);return {status:r.status,body:await r.json()}}
@@ -19,4 +19,17 @@ assert.equal((await call('/api/cards/'+created.body.id,'PUT',{...card,customer:'
 assert.equal((await call('/api/lookup','POST',{query:card.code})).body.records[0].customer,'Đã chỉnh sửa');
 assert.equal((await call('/api/cards/missing','PUT',card,'owner')).status,404);
 const denied=await worker.fetch(new Request('https://test.local/api/cards',{method:'POST',headers:{Origin:'https://evil.local','oai-authenticated-user-id':'owner'},body:JSON.stringify(card)}),env);assert.equal(denied.status,403);
+assert.equal(warrantyEnd('2024-02-29',5),'2029-02-28');
+assert.equal(warrantyEnd('2024-02-29',7),'2031-02-28');
+assert.equal(warrantyEnd('2024-02-29',10),'2034-02-28');
+for(const termYears of [5,7,10]){
+ const named={code:'Bảo hành '+termYears,product:'Titan',clinic:'Nha khoa thử',quantity:2,start:'2024-02-29',termYears,end:'2099-01-01',status:'active'};
+ assert.equal((await call('/api/cards','POST',named,'owner')).status,201);
+ const result=(await call('/api/lookup','POST',{query:named.code})).body.records[0];
+ assert.equal(result.end,warrantyEnd(named.start,termYears));
+ assert.equal(result.phone,'');
+ assert.equal(result.customer,'');
+ assert.equal((await call('/api/cards','POST',{...named,code:named.code+' sai',termYears:6},'owner')).status,400);
+}
+assert.equal((await call('/api/lookup','POST',{query:'()'})).body.records.length,0);
 console.log('Passed: authentication, authorization, create, edit, lookup by code/phone, duplicate, date validation, missing records, private fields and cross-origin protection.');
