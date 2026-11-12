@@ -6,7 +6,7 @@
 
 Mở rộng website từ tra cứu/quản trị thành bộ trang giới thiệu theo cấu trúc menu của [website tham khảo](https://baohanhzirconia.com/). Khảo sát ngày 11/11/2026 bằng trình duyệt: trang chủ, giới thiệu, cửa hàng, kiến thức, liên hệ và chi tiết Katana; tên và URL 16 sản phẩm được lấy từ các liên kết công khai.
 
-Bản dựng giữ các đường dẫn chính và tổ chức thông tin; giao diện tiếp tục dùng bộ nhận diện xanh navy/cyan của bản hiện có. Nội dung bài viết được biên soạn mới. 12 ảnh trên lưới trang chủ lấy từ website tham khảo theo yêu cầu và được lưu dưới dạng WebP trong `worker/product-images/`. Hình ảnh phục vụ minh họa, không dùng làm bằng chứng nhận diện sản phẩm thực tế.
+Bản dựng giữ các đường dẫn chính và tổ chức thông tin; giao diện tiếp tục dùng bộ nhận diện xanh navy/cyan của bản hiện có. Nội dung khách hàng dùng lời văn ngắn, nêu rõ thao tác tra cứu và hướng dẫn liên hệ nha khoa. Trang sản phẩm dùng tên và nhóm, cùng thông tin cần kiểm tra trên thẻ. 12 ảnh trên lưới trang chủ lấy từ website tham khảo theo yêu cầu và được lưu dưới dạng WebP trong `worker/product-images/`. Hình ảnh phục vụ minh họa, không dùng làm bằng chứng nhận diện sản phẩm thực tế.
 
 ## Bản đồ trang
 

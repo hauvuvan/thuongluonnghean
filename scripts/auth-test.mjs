@@ -32,7 +32,7 @@ try{
  const originalCookie=cookie;cookie='zirconia_session='+'a'.repeat(64);assert.equal((await call('/api/cards')).status,401);cookie=originalCookie;
  for(let i=0;i<10;i++)assert.equal((await call('/api/auth/login','POST',{...account,password:'wrong'})).status,401);
  assert.equal((await call('/api/auth/login','POST',account)).status,429);
- const page=await call('/tra-cuu-the-bao-hanh/');assert.match(page.body,/Kiểm tra thông tin bảo hành/);
+ const page=await call('/tra-cuu-the-bao-hanh/');assert.match(page.body,/<form id="searchform">/);
  const inline=page.body.match(/<script>([\s\S]*?)<\/script>/)[1];new Function(inline);
  console.log('Passed: admin setup, login/logout, spoofed identity rejection, password checks, secure session flags, cross-origin checks, restart persistence, public lookup, invalid sessions, login throttling, HTML and client JavaScript syntax.');
 }finally{DB.sqlite.close();rmSync(dir,{recursive:true,force:true})}

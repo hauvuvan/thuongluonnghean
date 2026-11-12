@@ -33,3 +33,10 @@
 - Thay đổi: dùng logo và tên công ty trên các trang công khai, tra cứu và quản trị. Hai trang cửa hàng hiển thị bảo trì; giữ dữ liệu và các trang nhóm, chi tiết. Xem [Các trang công khai](features/public-pages.md) để mở lại cửa hàng.
 - Kiểm thử độc lập: `npm test` (API, xác thực và 39 URL), build, validate, kiểm tra logo và trạng thái bảo trì trên máy chủ cục bộ và Worker build đều đạt. Sau khi khởi động lại bản xem thử, trình duyệt xác nhận trang Sản phẩm hiện logo, tên và thông báo ở khung mặc định và 375 px, không tràn ngang.
 - GitHub: chưa push vì lịch sử nhánh từ xa chưa được đối chiếu sau khi thao tác fetch bị từ chối ở đợt trước. Sites vẫn báo không tìm thấy dự án đã cấu hình; chưa có đích VPS.
+
+## 2026-11-12 09:34 — Asia/Ho_Chi_Minh
+
+- Yêu cầu: viết lại lời văn theo cách nói tự nhiên, thân thiện với khách.
+- Thay đổi: làm gọn trang chủ, tra cứu, giới thiệu, danh mục, chi tiết, hướng dẫn và liên hệ. Bỏ khẩu hiệu và mô tả chung chung, nói rõ cách tìm thẻ và khi nào nên hỏi nha khoa. Giữ ảnh, logo và trạng thái bảo trì của cửa hàng. Xem [Các trang công khai](features/public-pages.md).
+- Kiểm thử độc lập: `npm test`, build, validate và kiểm tra diff đều đạt. Đã kiểm tra API tra cứu mã và số điện thoại, 39 URL, 12 ảnh, logo và trạng thái bảo trì. Thử nút Xem kết quả mẫu trên trình duyệt và xác nhận dữ liệu minh họa hiện đúng. Đã nạp lại bản xem thử trên cổng 4173.
+- GitHub: chưa đối chiếu nhánh từ xa sau lần fetch bị từ chối trước đó, chưa push. Sites vẫn báo không tìm thấy dự án đã cấu hình. Chưa có đích VPS và chưa triển khai production.
