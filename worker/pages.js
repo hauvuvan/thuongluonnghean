@@ -39,7 +39,7 @@ function heading(kicker,title,intro){return '<section class="pagehead"><div clas
 function cta(){return '<section class="wrap cta"><div><h2>Bạn đã có thẻ bảo hành?</h2><p>Dùng mã thẻ hoặc số điện thoại đã đăng ký để xem thời hạn bảo hành.</p></div><a class="button" href="/tra-cuu-the-bao-hanh/">Tra cứu ngay →</a></section>'}
 function articleCards(){return '<div class="cards">'+articles.map(a=>'<article class="editorial"><small>'+a.tag+'</small><h3><a href="/tu-van/'+a.slug+'/">'+a.title+'</a></h3><p>'+a.intro+'</p><a class="more" href="/tu-van/'+a.slug+'/">Đọc hướng dẫn →</a></article>').join('')+'</div>'}
 export function renderPage(input){let path=input.split('?')[0];if(!path.endsWith('/'))path+='/';let title,body;
-if(path==='/'){title='Trang chủ';body='<section class="homehero"><div class="wrap herogrid"><div><h1>TRA CỨU THÔNG TIN BẢO HÀNH RĂNG SỨ</h1><p>Bạn muốn biết răng sứ còn bảo hành đến ngày nào? Nhập mã trên thẻ hoặc số điện thoại đã đăng ký bên dưới.</p></div><div class="heroart hero-real-teeth"><img src="/product-images/zirconia.webp" alt="Ảnh thực tế hàm răng phục hình răng sứ Zirconia" width="600" height="581" fetchpriority="high" decoding="async"></div></div></section><section class="wrap quick"><div><h2>TRA CỨU THỜI HẠN BẢO HÀNH</h2></div><form action="/tra-cuu-the-bao-hanh/"><label for="quick-query">Mã thẻ / Số điện thoại</label><div class="searchline"><input id="quick-query" name="query" required maxlength="80" placeholder="Nhập mã thẻ hoặc số điện thoại"><button class="button">Tra cứu →</button></div></form></section>'+groups.slice(0,2).map(homeGallery).join('')+'<section class="wrap section"><div class="sectiontitle"><h2>Hướng dẫn bảo hành</h2><a href="/chuyen-muc/tu-van-kien-thuc/">Xem tất cả ↗</a></div>'+articleCards()+'</section>';}
+if(path==='/'){title='Trang chủ';body='<section class="homehero"><div class="wrap herogrid"><div><h1>TRA CỨU THÔNG TIN BẢO HÀNH RĂNG SỨ</h1><p>Bạn muốn biết răng sứ còn bảo hành đến ngày nào? Nhập mã trên thẻ hoặc số điện thoại đã đăng ký bên dưới.</p></div><div class="hero-logo"><img src="/brand/five-t.png" alt="Logo FIVE-T Dental Lab" width="800" height="800" fetchpriority="high" decoding="async"></div></div></section><section class="wrap quick"><div><h2>TRA CỨU THỜI HẠN BẢO HÀNH</h2></div><form action="/tra-cuu-the-bao-hanh/"><label for="quick-query">Mã thẻ / Số điện thoại</label><div class="searchline"><input id="quick-query" name="query" required maxlength="80" placeholder="Nhập mã thẻ hoặc số điện thoại"><button class="button">Tra cứu →</button></div></form></section>'+groups.slice(0,2).map(homeGallery).join('')+'<section class="wrap section"><div class="sectiontitle"><h2>Hướng dẫn bảo hành</h2><a href="/chuyen-muc/tu-van-kien-thuc/">Xem tất cả ↗</a></div>'+articleCards()+'</section>';}
 else if(path==='/ve-chung-toi/'){
  title='Về chúng tôi';
  body=`<article class="wrap section reading">
@@ -150,16 +150,15 @@ header .header-navigation :focus-visible,header .brandrow .outline:focus-visible
 }
 .homehero h1{color:#000;font-size:clamp(32px,4.3vw,52px);margin:0 0 18px}
 .homehero p{color:#000;margin:0}
-.hero-real-teeth{
- width:100%;max-width:420px;margin:0 auto;
- border:6px solid #fff;border-radius:48% 48% 18px 18px;
- overflow:hidden;background:#dceef3;box-shadow:0 16px 36px #10365012;
+.hero-logo{
+ width:100%;max-width:420px;margin:0 auto;border-radius:20px;
+ overflow:hidden;background:#fff;box-shadow:0 16px 36px #10365012;
 }
-.hero-real-teeth img{display:block;width:100%;height:auto}
+.hero-logo img{display:block;width:100%;height:auto}
 @media(max-width:760px){
  .homehero .herogrid{grid-template-columns:minmax(0,1fr);gap:24px}
  .homehero h1{font-size:clamp(28px,5.5vw,38px);margin-bottom:12px}
- .hero-real-teeth{max-width:300px;border-width:4px}
+ .hero-logo{max-width:300px}
 }
 `;
 const homeGalleryCss=`
