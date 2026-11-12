@@ -136,3 +136,4 @@
 
 - Đổi khối đầu trang sang nền xanh dương nhạt #dbeafe, chữ tiêu đề và mô tả màu đen theo yêu cầu. Xem [các trang công khai](features/public-pages.md).
 - npm test, build, validate và diff đạt. Phát hành qua GitHub main và Vercel. VPS không áp dụng.
+- Sau phát hành, Vercel xác nhận commit 3eadd91. Trang chủ Production trả HTTP 200 với nền #dbeafe và chữ #000. Kiểm thử độc lập tính độ tương phản 17,21:1. Chưa xem runtime log.
