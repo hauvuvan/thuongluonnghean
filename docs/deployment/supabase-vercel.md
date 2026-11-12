@@ -6,7 +6,7 @@ Vercel chạy website và API trong một Node.js Function. Supabase Postgres l�
 
 ## 1. Chuẩn bị Supabase
 
-1. Chọn project Supabase thuộc tài khoản vận hành FIVE-T. Áp dụng migration [20261112000100_warranties.sql](../../supabase/migrations/20261112000100_warranties.sql) một lần qua Supabase CLI hoặc SQL Editor của đúng project. Migration tạo bảng, index, hàm tra cứu và quyền truy cập. Bật Data API và giữ schema `public` trong danh sách schema của Data API. Nếu đích đã có bảng cùng tên, kiểm tra cấu trúc và dữ liệu trước khi áp dụng.
+1. Chọn project Supabase thuộc tài khoản vận hành FIVE-T. Với project mới, áp dụng hai migration theo thứ tự [tạo bảng bảo hành](../../supabase/migrations/20261112025922_warranties.sql), rồi [giới hạn quyền máy chủ](../../supabase/migrations/20261112030013_restrict_warranty_service_role.sql) qua Supabase CLI hoặc SQL Editor của đúng project. Migration tạo bảng, index, hàm tra cứu và quyền truy cập. Bật Data API và giữ schema `public` trong danh sách schema của Data API. Nếu đích đã có bảng cùng tên, kiểm tra cấu trúc và dữ liệu trước khi áp dụng.
 2. Trong Authentication, tạo tài khoản email/mật khẩu cho người quản trị. Tắt đăng ký công khai nếu project chỉ dùng cho website này. Lấy UUID của người dùng để cấu hình Vercel. Tài khoản và phiên SQLite cũ không chuyển lên cloud.
 3. Nếu cần chuyển thẻ có sẵn, dừng ghi ở nguồn, sao lưu toàn bộ thư mục `data`, rồi xuất từ bản sao SQLite. Tệp SQL chứa dữ liệu cá nhân, đặt ngoài repo, giữ quyền chỉ chủ tệp đọc và chuyển thẳng đến PostgreSQL bằng kết nối TLS. Không đưa tệp vào chat, Git hoặc gói triển khai.
 

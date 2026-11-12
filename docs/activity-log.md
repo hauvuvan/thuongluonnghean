@@ -60,3 +60,9 @@
 
 - Đã xác nhận Vercel lưu `SUPABASE_URL` và `SUPABASE_PUBLISHABLE_KEY` cho Preview và Production. Chưa có `SUPABASE_SECRET_KEY` hoặc `SUPABASE_ADMIN_USER_ID`.
 - Kết nối quản trị Supabase không truy cập được project đã cung cấp. Chưa áp dụng migration, chưa triển khai bản mới hoặc nghiệm thu dữ liệu thật.
+
+### Supabase đã áp dụng migration — 2026-11-12 10:00 Asia/Ho_Chi_Minh
+
+- Project Supabase FIVE-T `ccjhrdrraezmkqjuneje` đã kết nối. Áp dụng và xác nhận hai migration `20261112025922` và `20261112030013`. Đồng bộ số phiên bản migration trong repo.
+- Codex và agent `qa_supabase_live` kiểm tra trên PostgreSQL thật: RLS, quyền anon/authenticated, sáu index và RPC trả 0 với mã thử. Quyền mặc định của service_role đã được thu hẹp: có thể thu hồi phiên, không được xóa thẻ hoặc sửa phiên. `npm test`, build và validate đều đạt.
+- Vercel vẫn thiếu secret key và UUID quản trị. Supabase chưa có tài khoản Auth lúc kiểm tra. Chưa cập nhật Vercel Production, chưa nghiệm thu đăng nhập và tra cứu qua Vercel.
