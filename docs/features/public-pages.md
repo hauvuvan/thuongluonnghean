@@ -27,7 +27,9 @@ Bản dựng giữ các đường dẫn chính và tổ chức thông tin; giao 
 
 FIVE-T Dental Lab là thương hiệu hiển thị trên đầu trang, chân trang và tiêu đề trình duyệt. Logo gốc nằm ở `worker/brand/five-t.png`.
 
-Mục Sản phẩm vẫn có trong menu. Khi `shopUnderMaintenance` trong `worker/pages.js` là `true`, `/shop/` và `/shop/page/2/` hiển thị “Đang bảo trì” cùng liên kết tra cứu và về trang chủ. Đặt lại thành `false` và build để mở lại lưới cửa hàng. Trang nhóm và chi tiết sản phẩm vẫn hoạt động.
+Header dùng chung giữa các trang công khai, tra cứu và quản trị. Menu và trang chủ đã bỏ mục kiến thức/hướng dẫn.
+
+Trang Sản phẩm mở danh mục 16 sản phẩm với ảnh thật, 12 sản phẩm ở trang đầu và 4 ở trang hai. Lưới bốn cột trên máy tính và hai trên điện thoại. Mục Sản phẩm vẫn có trong menu. Khi `shopUnderMaintenance` trong `worker/pages.js` là `true` (mặc định hiện tại là `false`), `/shop/` và `/shop/page/2/` hiển thị “Đang bảo trì” cùng liên kết tra cứu và về trang chủ. Đặt lại thành `false` và build để mở lại lưới cửa hàng. Trang nhóm và chi tiết sản phẩm vẫn hoạt động.
 
 Menu điều hướng dùng liên kết thật, có thể mở trực tiếp từng trang. Danh mục có tìm kiếm/lọc; chi tiết sản phẩm có thông tin riêng, liên kết nhóm và sản phẩm liên quan. Danh mục thương hiệu chưa có sản phẩm hiển thị trạng thái rỗng rõ ràng.
 

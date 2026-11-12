@@ -172,3 +172,8 @@
 - Rà ảnh sản phẩm, sửa thành phần thẻ dùng chung để Cùng nhóm sản phẩm và danh mục đều dùng ảnh thật. Bổ sung đúng ảnh Emax, Cao cấp Lava, Cercon HT và Sứ Zirconia từ mẫu để đủ 16 sản phẩm. Chi tiết sản phẩm dùng chung nguồn ảnh theo mã.
 - npm test, build, validate và diff đạt. Phát hành qua GitHub main và Vercel. VPS không áp dụng.
 - Sau triển khai, Vercel xác nhận commit dbe5ded. Trang Lava Production có ảnh HT Smile, Nacera, Cercon đúng ở Cùng nhóm sản phẩm. QA độc lập cục bộ xác minh 71 thẻ và 16 trang chi tiết dùng ảnh thật, đủ 16 WebP hợp lệ. Chưa kiểm tra trực quan hoặc runtime log.
+
+## 2026-11-12 13:46 — Asia/Ho_Chi_Minh
+
+- Dùng chung header cho trang chủ, trang công khai, tra cứu và quản trị. Bỏ menu kiến thức/hướng dẫn và khối bài hướng dẫn trên trang chủ. Mở lại cửa hàng với 16 ảnh sản phẩm, phân trang 12+4 và lưới bốn cột. Xem [các trang công khai](features/public-pages.md).
+- npm test (API/auth/39 URL), build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
