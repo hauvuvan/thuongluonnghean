@@ -118,3 +118,4 @@
 
 - Cập nhật trang Về chúng tôi theo ảnh mẫu, gồm giới thiệu labo Five-T, công nghệ, đội ngũ, chất lượng và liên hệ. Dùng liên kết hướng dẫn liên hệ hiện có vì ảnh không cung cấp số điện thoại hay email. Xem [các trang công khai](features/public-pages.md).
 - npm test, build, validate và kiểm tra diff đạt. Đích phát hành là GitHub main qua Vercel. VPS không áp dụng.
+- Sau triển khai, Vercel báo thành công cho commit 1a24b2f. Codex kiểm tra trang /ve-chung-toi/ trên tên miền chính trả HTTP 200, đúng tiêu đề Five-T và đủ bốn mục. Chưa xem runtime log. Không thay đổi dữ liệu.
