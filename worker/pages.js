@@ -42,8 +42,35 @@ export function renderPage(input){let path=input.split('?')[0];if(!path.endsWith
 if(path==='/'){title='Trang chủ';body='<section class="homehero"><div class="wrap herogrid"><div><h1>TRA CỨU THÔNG TIN BẢO HÀNH RĂNG SỨ</h1><p>Bạn muốn biết răng sứ còn bảo hành đến ngày nào? Nhập mã trên thẻ hoặc số điện thoại đã đăng ký bên dưới.</p></div><div class="heroart hero-real-teeth"><img src="/product-images/zirconia.webp" alt="Ảnh thực tế hàm răng phục hình răng sứ Zirconia" width="600" height="581" fetchpriority="high" decoding="async"></div></div></section><section class="wrap quick"><div><h2>TRA CỨU THỜI HẠN BẢO HÀNH</h2></div><form action="/tra-cuu-the-bao-hanh/"><label for="quick-query">Mã thẻ / Số điện thoại</label><div class="searchline"><input id="quick-query" name="query" required maxlength="80" placeholder="Nhập mã thẻ hoặc số điện thoại"><button class="button">Tra cứu →</button></div></form></section>'+groups.slice(0,2).map(homeGallery).join('')+'<section class="wrap section"><div class="sectiontitle"><h2>Hướng dẫn bảo hành</h2><a href="/chuyen-muc/tu-van-kien-thuc/">Xem tất cả ↗</a></div>'+articleCards()+'</section>';}
 else if(path==='/ve-chung-toi/'){
  title='Về chúng tôi';
- body=heading('','Về FIVE-T Dental Lab','Tại đây, bạn có thể xem các dòng răng sứ và kiểm tra thời hạn bảo hành.')
-  +'<section class="wrap section reading"><h2>Ai có thể giúp bạn về bảo hành?</h2><p>Nha khoa nơi bạn làm răng có thể xác nhận loại răng sứ, kiểm tra thông tin trên thẻ và hướng dẫn bạn nếu cần bảo hành.</p><a class="more" href="/lien-he/">Cách liên hệ nha khoa →</a></section>'+cta();
+ body=`<article class="wrap section reading">
+ <h1>Giới thiệu labo răng sứ FIVE-T Dental Lab</h1>
+ <p>Chúng tôi chế tác răng sứ cho các nha khoa. Từ thiết kế đến hoàn thiện, đội ngũ FIVE-T chú trọng khớp cắn, màu sắc và hình dáng của từng chiếc răng.</p>
+ <section>
+  <h2>Công nghệ chế tác răng sứ</h2>
+  <ul>
+   <li><strong>Quét mẫu 3D và thiết kế CAD/CAM</strong> giúp kỹ thuật viên dựng hình và kiểm tra độ khít trước khi chế tác.</li>
+   <li><strong>Lò nung sứ chân không</strong> hỗ trợ hoàn thiện màu sắc tự nhiên của răng sứ.</li>
+   <li><strong>Vật liệu sứ như Zirconia</strong> được lựa chọn theo yêu cầu của từng ca.</li>
+  </ul>
+ </section>
+ <section>
+  <h2>Đội ngũ kỹ thuật viên</h2>
+  <p>Đội ngũ có kinh nghiệm chế tác răng sứ và chăm chút từng chi tiết để răng có dáng tự nhiên, hài hòa với khuôn mặt và phù hợp với khớp cắn của từng khách hàng.</p>
+ </section>
+ <section>
+  <h2>Cam kết chất lượng</h2>
+  <ul>
+   <li>Kiểm tra độ khít, màu sắc và hình dáng trước khi bàn giao.</li>
+   <li>Phối hợp với nha khoa để hoàn thiện theo tiến độ đã hẹn.</li>
+   <li>Hỗ trợ sau bàn giao theo thời hạn và điều kiện ghi trên thẻ bảo hành.</li>
+  </ul>
+ </section>
+ <section>
+  <h2>Thông tin liên hệ</h2>
+  <p>Nếu cần hỏi về sản phẩm hoặc bảo hành, bạn có thể liên hệ nha khoa nơi làm răng.</p>
+  <a class="more" href="/lien-he/">Cách liên hệ nha khoa →</a>
+ </section>
+ </article>`+cta();
 }
 else if(shopUnderMaintenance&&(path==='/shop/'||path==='/shop/page/2/')){
  title='Sản phẩm';

@@ -112,3 +112,9 @@
 - Đổi tiêu đề khung tra cứu trang chủ thành “TRA CỨU THỜI HẠN BẢO HÀNH” và tăng cỡ chữ từ 21 px lên 24–30 px theo chiều rộng màn hình. Xem [các trang công khai](features/public-pages.md).
 - npm test (API, xác thực, 39 URL), build, validate và kiểm tra diff đạt. Đích phát hành là GitHub main qua Vercel. VPS không áp dụng.
 - Sau phát hành lúc 11:21 Asia/Ho_Chi_Minh, Vercel báo thành công cho commit 3fadac6. Codex kiểm tra trang chủ https://thuongluonnghean.vercel.app/ trả đúng tiêu đề và CSS 24–30 px. Không thao tác dữ liệu thật. Chưa kiểm tra log runtime.
+
+
+## 2026-11-12 11:22 — Asia/Ho_Chi_Minh
+
+- Cập nhật trang Về chúng tôi theo ảnh mẫu, gồm giới thiệu labo Five-T, công nghệ, đội ngũ, chất lượng và liên hệ. Dùng liên kết hướng dẫn liên hệ hiện có vì ảnh không cung cấp số điện thoại hay email. Xem [các trang công khai](features/public-pages.md).
+- npm test, build, validate và kiểm tra diff đạt. Đích phát hành là GitHub main qua Vercel. VPS không áp dụng.
