@@ -106,3 +106,8 @@
 
 - Đã đưa toàn bộ thay đổi lên GitHub main tại commit 61207cf theo yêu cầu. GitHub báo Vercel success cho commit này. [Bản triển khai Vercel](https://vercel.com/hauvuhdvn-8559s-projects/thuongluonnghean/2uRoAMjfHNmr3Gw8ykiyyFxFS2ZT).
 - Agent qa_push kiểm tra Production tại https://thuongluonnghean.vercel.app. Trang chủ và mẫu thẻ mới trả HTTP 200. API xác nhận Supabase, từ chối quản trị thiếu phiên bằng 401 và tra cứu mã thử trả danh sách rỗng. Chưa kiểm tra runtime log sau phát hành. Không ghi dữ liệu thử. VPS không áp dụng.
+
+## 2026-11-12 11:20 — Asia/Ho_Chi_Minh
+
+- Đổi tiêu đề khung tra cứu trang chủ thành “TRA CỨU THỜI HẠN BẢO HÀNH” và tăng cỡ chữ từ 21 px lên 24–30 px theo chiều rộng màn hình. Xem [các trang công khai](features/public-pages.md).
+- npm test (API, xác thực, 39 URL), build, validate và kiểm tra diff đạt. Đích phát hành là GitHub main qua Vercel. VPS không áp dụng.
