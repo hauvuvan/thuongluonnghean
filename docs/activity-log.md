@@ -66,3 +66,9 @@
 - Project Supabase FIVE-T `ccjhrdrraezmkqjuneje` đã kết nối. Áp dụng và xác nhận hai migration `20261112025922` và `20261112030013`. Đồng bộ số phiên bản migration trong repo.
 - Codex và agent `qa_supabase_live` kiểm tra trên PostgreSQL thật: RLS, quyền anon/authenticated, sáu index và RPC trả 0 với mã thử. Quyền mặc định của service_role đã được thu hẹp: có thể thu hồi phiên, không được xóa thẻ hoặc sửa phiên. `npm test`, build và validate đều đạt.
 - Vercel vẫn thiếu secret key và UUID quản trị. Supabase chưa có tài khoản Auth lúc kiểm tra. Chưa cập nhật Vercel Production, chưa nghiệm thu đăng nhập và tra cứu qua Vercel.
+
+### Cấu hình quản trị và bản chờ phát hành — 2026-11-12 Asia/Ho_Chi_Minh
+
+- Đã xác nhận đúng một tài khoản Supabase được xác minh và lưu UUID vào SUPABASE_ADMIN_USER_ID cho Vercel Production.
+- Đã dựng bản Production chờ phát hành, deployment dpl_Ac4HTWbNnkSxFuxWqALDQxbRDHiY, commit 6473fb3, trạng thái READY. URL https://thuongluonnghean-7ciwrxnvb-hauvuhdvn-8559s-projects.vercel.app. Đã tắt tự gắn domain để kiểm tra trước khi phát hành.
+- Phiên công cụ Vercel/Supabase bị gỡ trong lúc kiểm thử. HTTP bên ngoài nhận 302 từ lớp bảo vệ Vercel. Chưa hoàn tất kiểm thử dữ liệu/đăng nhập, chưa promote tên miền chính. Cần khôi phục kết nối Vercel để tiếp tục kiểm tra và khôi phục cấu hình tự gắn domain sau phát hành.
