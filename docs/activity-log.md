@@ -166,3 +166,8 @@
 - Hoàn thiện tám trang chi tiết răng sứ cao cấp mở từ ảnh trang chủ. Đọc trang nguồn, viết nội dung riêng theo từng dòng, dùng ảnh thực tế và liên kết sản phẩm cùng nhóm. Xem [Các trang công khai](features/public-pages.md).
 - npm test (API/auth/39 URL), build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
 - Sau triển khai 11:52 Asia/Ho_Chi_Minh, Vercel báo thành công cho commit 6bfc72a. Trang Lava trên domain chính có ảnh và nội dung riêng đúng bản mới. Agent qa_details xác minh tám đường dẫn, ảnh và liên kết nội bộ trên bản cục bộ đều đạt. Chưa xem runtime log.
+
+## 2026-11-12 12:20 — Asia/Ho_Chi_Minh
+
+- Rà ảnh sản phẩm, sửa thành phần thẻ dùng chung để Cùng nhóm sản phẩm và danh mục đều dùng ảnh thật. Bổ sung đúng ảnh Emax, Cao cấp Lava, Cercon HT và Sứ Zirconia từ mẫu để đủ 16 sản phẩm. Chi tiết sản phẩm dùng chung nguồn ảnh theo mã.
+- npm test, build, validate và diff đạt. Phát hành qua GitHub main và Vercel. VPS không áp dụng.
