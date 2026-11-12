@@ -88,3 +88,9 @@
 - Kiểm tra: npm test, build, validate đạt; bổ sung hồi quy mốc năm, mã có dấu, ngày nhuận, trường không bắt buộc và tra cứu chuỗi ký hiệu.
 - Tài liệu [Form thẻ bảo hành](features/warranty-form.md). Giữ thay đổi riêng của người dùng trong Xem_Web.command.
 - GitHub: chuẩn bị push nhánh codex/supabase-vercel. Vercel chờ cập nhật; VPS không áp dụng.
+
+### Sau triển khai form — 2026-11-12 10:40 Asia/Ho_Chi_Minh
+
+- Đã push commit dac2836 lên nhánh codex/supabase-vercel và phát hành Production dpl_Eypuwt4yPfyj79jSD8xwa27pDLDL. Vercel xác nhận READY và domain https://thuongluonnghean.vercel.app.
+- Agent qa_form kiểm tra độc lập API mới/cũ, mã có dấu, mốc năm, ngày nhuận và dữ liệu thiếu SĐT đều đạt. Trình duyệt trên Production xác nhận các lựa chọn Zirconia/Kim loại/Titan, radio 5/7/10 và Lab Five-T chỉ đọc trong form.
+- Chưa thử thao tác lưu thẻ qua phiên đăng nhập Production ở đợt này. Các chỉnh sửa đồng thời về ảnh thẻ minh họa và Xem_Web.command đang có trong workspace được giữ lại.
