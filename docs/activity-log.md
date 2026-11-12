@@ -49,3 +49,9 @@
 - Tài liệu: [Triển khai Supabase và Vercel](deployment/supabase-vercel.md).
 - GitHub: mã nguồn gốc trên `origin/main` trùng bản trước các thay đổi cục bộ nhưng lịch sử commit khác. Đã đẩy nhánh `codex/supabase-vercel` dựa trên `origin/main`, commit tính năng `d8ace5e`.
 - Cloud: Vercel yêu cầu xác nhận quyền truy cập nhóm. Kết nối Supabase chưa liệt kê được project, chưa chạy migration trên cloud. Chưa triển khai production, chưa kiểm thử sau triển khai. VPS không áp dụng.
+
+### Kiểm thử sau triển khai Preview — 2026-11-12 09:47 Asia/Ho_Chi_Minh
+
+- Môi trường: [Vercel Preview](https://thuongluonnghean-jormyt2yn-hauvuhdvn-8559s-projects.vercel.app), project `thuongluonnghean`, deployment `dpl_ADAnG3Zzgcw7HzThDjLvcPgF9Zoa`, commit `9ec9a36`. Vercel xác nhận READY. Bản Preview giữ quyền bảo vệ của project.
+- Kiểm thử viên: agent `qa_cloud` và Codex. Trang chủ, cửa hàng đang bảo trì, chi tiết Katana, trang tra cứu và trang quản trị đều HTTP 200. Logo PNG và ảnh Katana WebP trả đúng định dạng. Trang chủ đúng tên FIVE-T và đủ 12 đường dẫn ảnh. Đường dẫn migration trả 404. API trạng thái đăng nhập HTTP 503 có thông báo chưa kết nối. Log Vercel không có lỗi mức error/fatal trong cửa sổ 15 phút đã kiểm tra.
+- Chưa xác nhận project Supabase đích, chưa chạy migration hoặc cấu hình biến môi trường. Luồng tra cứu dữ liệu, đăng nhập và ghi thẻ chưa nghiệm thu trên Preview. Production chưa triển khai.
