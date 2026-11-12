@@ -47,8 +47,8 @@ export function createVercelHandler(env=process.env,fetchRequest=fetch){
   if(!['GET','HEAD'].includes(incoming.method)&&incoming.headers.get('origin')!==url.origin){
    return json({error:'Yêu cầu không hợp lệ.'},403);
   }
-  const {SUPABASE_URL,SUPABASE_SECRET_KEY,SUPABASE_PUBLISHABLE_KEY,SUPABASE_ADMIN_USER_ID}=env;
-  if(!SUPABASE_URL||!SUPABASE_SECRET_KEY||!SUPABASE_PUBLISHABLE_KEY||!SUPABASE_ADMIN_USER_ID)return unavailable();
+  const {SUPABASE_URL,SUPABASE_SECRET_KEY,SUPABASE_PUBLISHABLE_KEY}=env;
+  if(!SUPABASE_URL||!SUPABASE_SECRET_KEY||!SUPABASE_PUBLISHABLE_KEY)return unavailable();
 
   const headers=new Headers(incoming.headers);
   for(const key of [...headers.keys()]){
@@ -73,15 +73,17 @@ export function createVercelHandler(env=process.env,fetchRequest=fetch){
     if(!email||email.length>254||typeof password!=='string'||!password||password.length>200){
      return json({error:'Nhập email và mật khẩu quản trị.'},400);
     }
+    if(!await supabase.isPrivateAuth())return unavailable();
     const response=await supabase.login(email,password);
     if(response.status===429)return json({error:'Bạn đã thử quá nhiều lần. Vui lòng thử lại sau.'},429);
     if([400,401,403,422].includes(response.status))return json({error:'Email hoặc mật khẩu không đúng.'},401);
     if(!response.ok)return unavailable();
     const session=await response.json();
-    if(session.user?.id!==SUPABASE_ADMIN_USER_ID)return json({error:'Tài khoản không có quyền quản trị.'},403);
+    const adminId=session.user?.id;
+    if(!adminId||!session.user.email||!session.user.email_confirmed_at||session.user.is_anonymous)return unauthorized();
     const newToken=randomBytes(32).toString('hex');
     const expiresAt=new Date(Date.now()+sessionAge*1000).toISOString();
-    await supabase.createSession(digest(newToken),SUPABASE_ADMIN_USER_ID,expiresAt);
+    await supabase.createSession(digest(newToken),adminId,expiresAt);
     return json({ok:true},200,{'Set-Cookie':cookie(newToken,sessionAge)});
    }
    if(path==='/api/auth/logout'&&request.method==='POST'){
@@ -92,10 +94,11 @@ export function createVercelHandler(env=process.env,fetchRequest=fetch){
     return worker.fetch(request,{warranties:supabase.warranties});
    }
    if(!token||!tokenPattern.test(token))return unauthorized();
-   if(!await supabase.hasSession(digest(token),SUPABASE_ADMIN_USER_ID))return unauthorized();
-   headers.set('oai-authenticated-user-id',SUPABASE_ADMIN_USER_ID);
+   const adminId=await supabase.getSession(digest(token));
+   if(!adminId)return unauthorized();
+   headers.set('oai-authenticated-user-id',adminId);
    return worker.fetch(new Request(url,{method:incoming.method,headers,body}),{
-    warranties:supabase.warranties,ADMIN_USER_ID:SUPABASE_ADMIN_USER_ID
+    warranties:supabase.warranties,ADMIN_USER_ID:adminId
    });
   }catch{
    return unavailable();

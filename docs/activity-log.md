@@ -184,3 +184,8 @@
 - Ba sản phẩm đánh dấu X (Cao cấp Lava, Cercon HT, Emax) hiển thị Đang bảo trì ở trang chi tiết. Bỏ chữ tên, nhóm và Xem chi tiết dưới các ô sản phẩm, giữ ảnh có alt và liên kết.
 - npm test (API/auth/39 URL), build, validate và diff đạt. Phát hành GitHub main qua Vercel. VPS không áp dụng.
 - Sau triển khai, Vercel xác nhận commit 428629d. Trang Emax Production trả Đang bảo trì. QA độc lập xác minh ba trang bảo trì, danh mục 12+4 và ô sản phẩm chỉ ảnh, Lava thường vẫn có bài. Chưa kiểm tra trực quan điện thoại hoặc runtime log.
+
+## 2026-11-12 14:02 — Asia/Ho_Chi_Minh
+
+- Sửa đăng nhập Supabase: tài khoản email được thêm vào project và đã xác minh đều là quản trị. Bỏ giới hạn một UUID; phiên lưu đúng người dùng, kiểm tra tài khoản bị khóa/xóa khi truy cập. Tắt đăng ký công khai trên Supabase và xác minh settings trả disable_signup=true, anonymous_users=false. Xem [vận hành Supabase/Vercel](deployment/supabase-vercel.md).
+- npm test, build, validate và diff đạt. Đang kiểm thử độc lập trước khi push GitHub main; chưa triển khai bản mã mới. VPS không áp dụng.

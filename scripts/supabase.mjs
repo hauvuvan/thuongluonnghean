@@ -48,6 +48,10 @@ export function createSupabase({url,secretKey,publishableKey,fetchRequest=fetch}
 
  return {
   warranties,
+  async isPrivateAuth(){
+   const settings=await data('/auth/v1/settings',{key:publishableKey});
+   return settings.disable_signup===true && settings.external?.anonymous_users===false;
+  },
   login(email,password){
    return send('/auth/v1/token?grant_type=password',{key:publishableKey,method:'POST',body:{email,password}});
   },
@@ -56,12 +60,19 @@ export function createSupabase({url,secretKey,publishableKey,fetchRequest=fetch}
    await data(sessions+'?'+new URLSearchParams({expires_at:'lte.'+new Date().toISOString()}),{method:'DELETE'});
    await data(sessions,{method:'POST',body:{token_hash:tokenHash,admin_id:adminId,expires_at:expiresAt}});
   },
-  async hasSession(tokenHash,adminId){
+  async getSession(tokenHash){
    const params=new URLSearchParams({
-    select:'token_hash',token_hash:'eq.'+tokenHash,admin_id:'eq.'+adminId,
+    select:'admin_id',token_hash:'eq.'+tokenHash,
     expires_at:'gt.'+new Date().toISOString(),limit:'1'
    });
-   return (await data('/rest/v1/warranty_admin_sessions?'+params)).length===1;
+   const rows=await data('/rest/v1/warranty_admin_sessions?'+params);
+   if(rows.length!==1)return null;
+   const response=await send('/auth/v1/admin/users/'+encodeURIComponent(rows[0].admin_id));
+   if(response.status===404)return null;
+   if(!response.ok)throw new Error('Auth user check failed');
+   const user=await response.json();
+   if(!user.email||!user.email_confirmed_at||user.is_anonymous||new Date(user.banned_until).getTime()>Date.now())return null;
+   return user.id===rows[0].admin_id?user.id:null;
   },
   revokeSession(tokenHash){
    return data('/rest/v1/warranty_admin_sessions?token_hash=eq.'+tokenHash,{method:'DELETE'});
