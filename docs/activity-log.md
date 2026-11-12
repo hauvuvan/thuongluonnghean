@@ -189,3 +189,11 @@
 
 - Sửa đăng nhập Supabase: tài khoản email được thêm vào project và đã xác minh đều là quản trị. Bỏ giới hạn một UUID; phiên lưu đúng người dùng, kiểm tra tài khoản bị khóa/xóa khi truy cập. Tắt đăng ký công khai trên Supabase và xác minh settings trả disable_signup=true, anonymous_users=false. Xem [vận hành Supabase/Vercel](deployment/supabase-vercel.md).
 - npm test, build, validate và diff đạt. Đang kiểm thử độc lập trước khi push GitHub main; chưa triển khai bản mã mới. VPS không áp dụng.
+
+## 2026-11-12 14:12 — Asia/Ho_Chi_Minh
+
+- Yêu cầu: kiểm tra trang quản trị kẹt ở “Đang tải dữ liệu quản trị…” sau đăng nhập, tối ưu tải.
+- Khảo sát: Production mở được form đăng nhập ở phiên chưa đăng nhập. Mã cũ không giới hạn thời gian fetch/đọc phản hồi; gọi xác minh phiên dư qua /api/me; form báo lỗi có thể đã bị thay khi tải sau đăng nhập thất bại. Chưa khẳng định nguyên nhân mạng của phiên trong ảnh.
+- Sửa: giới hạn mỗi yêu cầu 15 giây, thông báo lỗi tiếng Việt và nút thử lại; giữ lỗi sau đăng nhập; về form khi hết phiên, chặn tải đồng thời; bỏ /api/me dư, tối ưu tính ngày và trường null trong bảng. Không thay dữ liệu/schema.
+- Kiểm tra: npm test, build, validate, git diff --check đạt. Agent qa_admin kiểm thử hồi quy giao diện độc lập. Tài liệu: [Đăng nhập và tải quản trị](features/admin-loading.md).
+- GitHub: chuẩn bị commit/push main để Vercel tự phát hành. Đang chờ xác minh bản phát hành và phiên đăng nhập thật. VPS không áp dụng.

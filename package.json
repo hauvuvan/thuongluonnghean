@@ -6,7 +6,7 @@
     "build": "bash scripts/build.sh",
     "validate": "node scripts/validate-artifact.mjs",
     "start": "node scripts/preview.mjs",
-    "test": "node scripts/test.mjs && node scripts/auth-test.mjs && node scripts/pages-test.mjs && node scripts/cloud-auth-test.mjs",
+    "test": "node scripts/test.mjs && node scripts/auth-test.mjs && node scripts/pages-test.mjs && node scripts/cloud-auth-test.mjs && node scripts/admin-ui-test.mjs",
     "package": "node scripts/package.mjs"
   },
   "engines": {
