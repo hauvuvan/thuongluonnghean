@@ -101,3 +101,8 @@
 - Yêu cầu đẩy toàn bộ thay đổi của dự án lên GitHub. Bản cập nhật gồm thiết kế thẻ minh họa Five-T và trình mở website trên máy. Xem [tổng quan dự án](README.md).
 - Kiểm tra npm test (API, xác thực và 39 URL), build, validate, cú pháp Xem_Web.command và diff đều đạt.
 - Đích GitHub là nhánh codex/supabase-vercel. Lượt này chỉ đồng bộ GitHub theo yêu cầu. Không phát hành Production hoặc VPS.
+
+## 2026-11-12 11:17 — Asia/Ho_Chi_Minh
+
+- Đã đưa toàn bộ thay đổi lên GitHub main tại commit 61207cf theo yêu cầu. GitHub báo Vercel success cho commit này. [Bản triển khai Vercel](https://vercel.com/hauvuhdvn-8559s-projects/thuongluonnghean/2uRoAMjfHNmr3Gw8ykiyyFxFS2ZT).
+- Agent qa_push kiểm tra Production tại https://thuongluonnghean.vercel.app. Trang chủ và mẫu thẻ mới trả HTTP 200. API xác nhận Supabase, từ chối quản trị thiếu phiên bằng 401 và tra cứu mã thử trả danh sách rỗng. Chưa kiểm tra runtime log sau phát hành. Không ghi dữ liệu thử. VPS không áp dụng.
